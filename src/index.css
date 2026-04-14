@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand-primary: #0f172a;
+  --color-brand-accent: #3b82f6;
+  --color-brand-surface: #f8fafc;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-surface text-brand-primary font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* Custom Clip Paths */
+.clip-path-poly {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%);
+}
+
+.clip-path-slant {
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+}
+
+/* Parallax Helper */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
