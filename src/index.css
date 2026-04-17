@@ -8,8 +8,13 @@
   --font-number: "Anglican Text", serif;
   
   --color-brand-primary: #0f172a;
-  --color-brand-accent: #3b82f6;
+  --color-brand-accent: #C9A227;
   --color-brand-surface: #f8fafc;
+}
+
+.text-brand-accent {
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 @layer base {

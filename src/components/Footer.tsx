@@ -7,9 +7,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div className="space-y-6">
           <Link to="/" className="flex items-center gap-2">
-            <div className="p-2 bg-brand-accent rounded-lg">
-              <Cpu className="w-6 h-6 text-white" />
-            </div>
+            <img
+  src="/uploads/gallery/logo.jpeg"   // 👈 your logo path
+  alt="FCIT Logo"
+  className="h-10 w-auto object-contain"
+/>
             <span className="font-display font-bold text-2xl tracking-tighter">
               FCIT Department
             </span>
@@ -21,15 +23,11 @@ export default function Footer() {
             <a href="https://www.facebook.com/share/1886qdz3mL/" target="_blank" rel="noreferrer" className="p-2 bg-white/5 hover:bg-brand-accent transition-colors rounded-full">
               <Facebook className="w-4 h-4" />
             </a>
-            <a href="#" className="p-2 bg-white/5 hover:bg-brand-accent transition-colors rounded-full">
-              <Twitter className="w-4 h-4" />
-            </a>
+            
             <a href="https://www.instagram.com/gmsafgcdvg?igsh=MWc5NDVuem9zMXI5MQ==" target="_blank" rel="noreferrer" className="p-2 bg-white/5 hover:bg-brand-accent transition-colors rounded-full">
               <Instagram className="w-4 h-4" />
             </a>
-            <a href="#" className="p-2 bg-white/5 hover:bg-brand-accent transition-colors rounded-full">
-              <Linkedin className="w-4 h-4" />
-            </a>
+            
             <a href="https://youtube.com/@gmudvg?si=zj0zJ7fL2LlFtrmz" target="_blank" rel="noreferrer" className="p-2 bg-white/5 hover:bg-brand-accent transition-colors rounded-full">
               <Youtube className="w-4 h-4" />
             </a>
@@ -48,37 +46,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
-          <h4 className="font-display font-bold text-lg mb-6">Social Media</h4>
-          <ul className="space-y-4 text-sm text-gray-400">
-            <li>
-              <a href="https://www.facebook.com/share/1886qdz3mL/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-                Facebook page URL
-              </a>
-            </li>
-            <li>
-              <span className="block">Twitter handle</span>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/gmsafgcdvg?igsh=MWc5NDVuem9zMXI5MQ==" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-                Instagram handle 1
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/gmu_bca_official?igsh=MXJlZ2hvd3JoajU5Mg==" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-                Instagram handle 2
-              </a>
-            </li>
-            <li>
-              <span className="block">LinkedIn page URL</span>
-            </li>
-            <li>
-              <a href="https://youtube.com/@gmudvg?si=zj0zJ7fL2LlFtrmz" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-                YouTube channel URL
-              </a>
-            </li>
-          </ul>
-        </div>
 
         <div>
           <h4 className="font-display font-bold text-lg mb-6">Contact Us</h4>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Search, ExternalLink, Calendar, User, Tag } from 'lucide-react';
+import { Search, ExternalLink, Calendar, User, Tag, Download } from 'lucide-react';
 import { Project } from '@/types';
 
 interface ExpandableCardProps {
@@ -63,6 +63,18 @@ export default function ExpandableCard({ project }: ExpandableCardProps) {
                   </span>
                 ))}
               </div>
+              {project.downloadUrl && (
+                <a
+                  href={project.downloadUrl}
+                  download
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 mb-4 rounded-lg border border-brand-primary px-4 py-3 text-sm font-bold text-brand-primary transition hover:bg-brand-primary hover:text-white"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Report
+                </a>
+              )}
             </motion.div>
           )}
         </AnimatePresence>

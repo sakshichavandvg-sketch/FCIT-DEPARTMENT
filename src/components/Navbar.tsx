@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Cpu } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -16,11 +16,22 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const currentY = window.scrollY;
+      setIsScrolled(currentY > 20);
+
+      if (currentY > lastScrollY.current && currentY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentY;
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -30,7 +41,8 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
+        'sticky top-0 left-0 right-0 z-50 transition-all duration-300 transform px-6 py-4',
+        isVisible ? 'translate-y-0' : '-translate-y-full',
         isScrolled
           ? 'bg-[#0B1F3A]/95 backdrop-blur-xl shadow-[0_25px_80px_rgba(0,0,0,0.22)]'
           : 'bg-[#0B1F3A]'
@@ -39,9 +51,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
           <img
-            src="/uploads/gallery/logo.jpg"
+            src="/uploads/gallery/logo.jpeg"
             alt="FCIT Department logo"
-            className="w-12 h-12 rounded-lg object-cover"
+            className="w-18 h-18 object-contain"
           />
           <span className="font-display font-bold text-xl tracking-tighter text-white drop-shadow-[0_0_10px_rgba(255,234,133,0.25)]">
             FCIT Department

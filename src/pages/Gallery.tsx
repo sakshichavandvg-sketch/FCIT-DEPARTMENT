@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Filter, Calendar, Maximize2 } from 'lucide-react';
+import { Calendar, Maximize2 } from 'lucide-react';
 import ParallaxHero from '@/components/ParallaxHero';
 import GalleryCarousel from '@/components/GalleryCarousel';
 import { GALLERY } from '@/constants';
@@ -9,24 +9,48 @@ import { GalleryImage } from '@/types';
 const CATEGORIES = ['All', 'Events', 'Campus', 'Workshops', 'Achievements', 'Sports', 'Orientation'];
 
 const FEATURED_MOMENTS = [
-  { id: 'fm1', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Tech-carnival-2k26/WhatsApp Image 2026-04-04 at 2.37.28 PM.jpeg', title: 'Tech Carnival', caption: 'Energy and celebration on campus.' },
-  { id: 'fm2', url: '/uploads/gallery/FCIT-photo/FCIT-photo/conference_2k25/WhatsApp Image 2026-04-04 at 3.58.10 PM.jpeg', title: 'Conference Day', caption: 'Focused minds and new ideas.' },
-  { id: 'fm3', url: '/uploads/gallery/FCIT-photo/FCIT-photo/workshops/WhatsApp Image 2026-04-04 at 4.20.35 PM.jpeg', title: 'Workshop Moment', caption: 'Learning through doing.' },
-  { id: 'fm4', url: '/uploads/gallery/FCIT-photo/FCIT-photo/student_corner/WhatsApp Image 2026-04-04 at 5.10.18 PM.jpeg', title: 'Student Life', caption: 'Every connection matters.' },
-  { id: 'fm5', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Graduation day/WhatsApp Image 2026-04-04 at 5.17.05 PM.jpeg', title: 'Graduation Day', caption: 'A proud campus milestone.' },
-  { id: 'fm6', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Orientation program/WhatsApp Image 2026-04-04 at 3.08.45 PM.jpeg', title: 'Orientation Day', caption: 'New beginnings and fresh ideas.' },
-  { id: 'fm7', url: '/uploads/gallery/FCIT-photo/FCIT-photo/sports events/WhatsApp Image 2026-04-04 at 3.26.44 PM.jpeg', title: 'Sports Spirit', caption: 'Teamwork out on the field.' },
-  { id: 'fm8', url: '/uploads/gallery/FCIT-photo/FCIT-photo/world cancer day/WhatsApp Image 2026-04-04 at 3.04.20 PM.jpeg', title: 'Community Care', caption: 'Events that bring everyone together.' },
+  { id: 'fm1', url: '/uploads/gallery/FCIT-photo/FCIT-photo/GMS-TRIP/WhatsApp Image 2026-04-04 at 2.55.41 PM (1).jpeg', title: 'GMS Trip', caption: 'A memorable learning journey outside the classroom.' },
+  { id: 'fm2', url: '/uploads/gallery/FCIT-photo/FCIT-photo/parents_meeting/WhatsApp Image 2026-04-04 at 4.40.40 PM (1).jpeg', title: 'Parent Meet', caption: 'Building stronger bonds with families and students.' },
+  { id: 'fm3', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Tech-carnival-2k26/WhatsApp Image 2026-04-04 at 2.37.30 PM.jpeg', title: 'Carnival Energy', caption: 'Hands-on innovation and campus excitement.' },
+  { id: 'fm4', url: '/uploads/gallery/FCIT-photo/FCIT-photo/ideathon/WhatsApp Image 2026-04-04 at 3.22.28 PM.jpeg', title: 'Idea Sprint', caption: 'Students pitching creative solutions under pressure.' },
+  { id: 'fm5', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Ivestiture-ceremony/WhatsApp Image 2026-04-04 at 2.53.30 PM.jpeg', title: 'Investiture', caption: 'Campus leaders taking charge with pride.' },
+  { id: 'fm6', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Opeartion sindoor/WhatsApp Image 2026-04-04 at 2.57.13 PM.jpeg', title: 'Community Service', caption: 'A heartfelt outreach initiative from FCIT students.' },
+  { id: 'fm7', url: '/uploads/gallery/FCIT-photo/FCIT-photo/NSS/WhatsApp Image 2026-04-04 at 4.15.29 PM.jpeg', title: 'NSS Drive', caption: 'Service, solidarity, and campus impact in action.' },
+  { id: 'fm8', url: '/uploads/gallery/FCIT-photo/FCIT-photo/women_empowermentcell/WhatsApp Image 2026-04-04 at 4.58.05 PM.jpeg', title: 'Empowerment Rally', caption: 'Celebrating leadership, voice, and community strength.' },
+  { id: 'fm9', url: '/uploads/gallery/FCIT-photo/FCIT-photo/CASP/WhatsApp Image 2026-04-04 at 4.33.23 PM.jpeg', title: 'CASP Gathering', caption: 'Cross-school collaboration and engagement.' },
+  { id: 'fm10', url: '/uploads/gallery/FCIT-photo/FCIT-photo/faculty_corner/WhatsApp Image 2026-04-04 at 4.13.14 PM.jpeg', title: 'Faculty Forum', caption: 'Experts exchanging ideas in a candid moment.' },
+  { id: 'fm11', url: '/uploads/gallery/FCIT-photo/FCIT-photo/NSS/WhatsApp Image 2026-04-04 at 4.40.49 PM.jpeg', title: 'NSS Action', caption: 'Volunteers making a visible impact across campus.' },
+  { id: 'fm12', url: '/uploads/gallery/FCIT-photo/FCIT-photo/parents_meeting/WhatsApp Image 2026-04-04 at 4.42.35 PM (1).jpeg', title: 'Parent Engagement', caption: 'A thoughtful moment from our parent-student discussions.' },
 ];
 
 export default function Gallery() {
   const [filter, setFilter] = useState('All');
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
-  const [activeFeatured, setActiveFeatured] = useState<string | null>(null);
+  const [flippedCard, setFlippedCard] = useState<string | null>(null);
+  const [isAutoScrollPaused, setIsAutoScrollPaused] = useState(false);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const filteredImages = filter === 'All' 
     ? GALLERY 
     : GALLERY.filter(img => img.category === filter);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const step = 1.2;
+    const interval = window.setInterval(() => {
+      if (isAutoScrollPaused) return;
+      if (!container) return;
+
+      container.scrollLeft += step;
+      if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 1) {
+        container.scrollLeft = 0;
+      }
+    }, 16);
+
+    return () => window.clearInterval(interval);
+  }, [isAutoScrollPaused]);
 
   return (
     <div className="pb-32">
@@ -114,50 +138,68 @@ export default function Gallery() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-10">
             <div>
-              <p className="text-sm uppercase tracking-[0.35em] text-brand-accent font-semibold">Featured Moments</p>
-              <h2 className="mt-3 text-4xl font-display font-bold">Expandable Photo Strip</h2>
+              <p className="text-sm uppercase tracking-[0.35em] text-brand-accent font-semibold">Flip Card Gallery</p>
+              <h2 className="mt-3 text-4xl font-display font-bold">Interactive Horizontal Showcase</h2>
             </div>
-            <p className="max-w-2xl text-gray-500">Hover any moment to expand it and reveal the emotion behind the event.</p>
+            <p className="max-w-2xl text-gray-500">Click any card to flip it and reveal the back side content.</p>
           </div>
 
-          <div className="overflow-x-auto no-scrollbar">
-            <div className="flex min-w-[1200px] gap-4">
-              {FEATURED_MOMENTS.map((item, index) => {
-                const isActive = activeFeatured === item.id;
-                const isDimmed = activeFeatured !== null && activeFeatured !== item.id;
+          <div
+            ref={scrollRef}
+            className="relative overflow-x-auto no-scrollbar py-6"
+            style={{ perspective: '1500px' }}
+            onMouseEnter={() => setIsAutoScrollPaused(true)}
+            onMouseLeave={() => setIsAutoScrollPaused(false)}
+          >
+            <div className="flex gap-6 min-w-[1000px] px-2">
+              {FEATURED_MOMENTS.map((item) => {
+                const isFlipped = flippedCard === item.id;
 
                 return (
-                  <motion.button
+                  <button
                     key={item.id}
-                    initial={{ opacity: 0, x: -40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, delay: index * 0.08, ease: 'easeOut' }}
-                    animate={{
-                      flex: isActive ? '2.4 1 0%' : isDimmed ? '0.8 1 0%' : '1 1 140px',
-                      opacity: isDimmed ? 0.8 : 1,
-                    }}
-                    onHoverStart={() => setActiveFeatured(item.id)}
-                    onHoverEnd={() => setActiveFeatured(null)}
-                    className="group relative min-w-[140px] overflow-hidden rounded-[30px] bg-slate-900 shadow-[0_30px_80px_rgba(15,23,42,0.12)] transition-all duration-500 ease-in-out"
+                    type="button"
+                    onClick={() => setFlippedCard(isFlipped ? null : item.id)}
+                    className="relative w-[280px] h-[420px] flex-shrink-0 rounded-[28px] shadow-[0_30px_70px_rgba(15,23,42,0.18)] overflow-hidden border border-white/10 transition-transform duration-300 ease-out hover:-translate-y-2 hover:scale-[1.03]"
+                    style={{ perspective: '1500px' }}
                   >
-                    <motion.img
-                      src={item.url}
-                      alt={item.title}
-                      className="h-[420px] w-full object-cover transition-transform duration-700"
-                      animate={{ scale: isActive ? 1.06 : 1 }}
-                      whileHover={{ scale: 1.08 }}
-                      loading="lazy"
-                      decoding="async"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
-                    <div className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <p className="text-sm uppercase tracking-[0.3em] text-amber-200">Featured</p>
-                      <h3 className="mt-3 text-2xl font-semibold text-white">{item.title}</h3>
-                      <p className="mt-2 text-sm text-slate-200/90 font-accent">{item.caption}</p>
+                    <div
+                      className="relative w-full h-full"
+                      style={{ transformStyle: 'preserve-3d', transition: 'transform 0.65s ease', transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
+                    >
+                      <div
+                        className="absolute inset-0 rounded-[28px] overflow-hidden"
+                        style={{ backfaceVisibility: 'hidden', transformStyle: 'preserve-3d' }}
+                      >
+                        <img
+                          src={item.url}
+                          alt={item.title}
+                          className="w-full h-full object-cover"
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="absolute inset-0 bg-black/20 transition-opacity duration-300" />
+                        <div className="absolute bottom-6 left-6 text-white">
+                          <p className="text-xs uppercase tracking-[0.35em] text-brand-accent font-semibold">{item.title}</p>
+                          <p className="mt-2 max-w-[220px] text-sm text-white/90">{item.caption}</p>
+                        </div>
+                      </div>
+
+                      <div
+                        className="absolute inset-0 rounded-[28px] bg-slate-950 text-white p-6 flex flex-col justify-between"
+                        style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', transformStyle: 'preserve-3d' }}
+                      >
+                        <div>
+                          <p className="text-brand-accent uppercase tracking-[0.35em] text-xs font-semibold">More details</p>
+                          <h3 className="mt-4 text-2xl font-display font-bold">{item.title}</h3>
+                          <p className="mt-3 text-sm text-white/70 leading-relaxed">{item.caption} Experience the story behind this moment with a richer perspective.</p>
+                        </div>
+                        <div className="text-xs text-white/60">
+                          <p className="mb-2">Tap again to flip back.</p>
+                          <p className="font-semibold">Location: {item.title}</p>
+                        </div>
+                      </div>
                     </div>
-                  </motion.button>
+                  </button>
                 );
               })}
             </div>

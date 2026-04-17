@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FileText, Download, Info, ArrowRight, Code, Monitor, ShieldCheck, Cloud, BarChart3 } from 'lucide-react';
 import ParallaxHero from '@/components/ParallaxHero';
 import ClipPathCard from '@/components/ClipPathCard';
+import DownloadBrochureButton from '@/components/DownloadBrochureButton';
 import Modal from '@/components/Modal';
 import { SCHOOLS } from '@/constants';
 import { Course } from '@/types';
@@ -38,7 +39,7 @@ export default function Schools() {
       <ParallaxHero
         title="Our Schools"
         subtitle="Specialized centers of excellence in Computer Applications and Computer Science."
-        image="/uploads/gallery/image_e00f9047.png"
+        image="/uploads/gallery/km.jpeg"
       />
 
       <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-20">
@@ -85,14 +86,17 @@ export default function Schools() {
                                   <Info className="w-5 h-5" />
                                 </button>
                                 {course.documentUrl && course.documentUrl !== '#' ? (
-                                  <a
-                                    href={course.documentUrl}
-                                    download
-                                    onClick={(event) => event.stopPropagation()}
-                                    className="p-2 bg-white text-brand-accent rounded-lg shadow-sm hover:bg-brand-accent hover:text-white transition-all inline-flex items-center justify-center"
-                                  >
-                                    <Download className="w-5 h-5" />
-                                  </a>
+                                  <div onClick={(event) => event.stopPropagation()}>
+                                    <DownloadBrochureButton
+                                      fileUrl={course.documentUrl}
+                                      fileName={`${course.name}-Brochure.pdf`}
+                                      defaultCourseName={course.name}
+                                      buttonText=""
+                                      buttonClassName="p-2 bg-white text-brand-accent rounded-lg shadow-sm hover:bg-brand-accent hover:text-white transition-all inline-flex items-center justify-center"
+                                    >
+                                      <Download className="w-5 h-5" />
+                                    </DownloadBrochureButton>
+                                  </div>
                                 ) : (
                                   <button
                                     disabled
@@ -115,7 +119,6 @@ export default function Schools() {
         </div>
       </div>
 
-      {/* Course Detail Modal */}
       <Modal
         isOpen={!!selectedCourse}
         onClose={() => setSelectedCourse(null)}
@@ -249,19 +252,18 @@ export default function Schools() {
             <div className="grid gap-4 sm:grid-cols-2">
               <Link
                 to="/contact"
-                className="inline-flex min-h-[64px] items-center justify-center rounded-full bg-blue-600 px-10 text-base font-semibold text-white shadow-[0_20px_60px_rgba(37,99,235,0.28)] transition duration-300 hover:-translate-y-0.5 hover:bg-blue-700"
+                className="inline-flex min-h-[64px] items-center justify-center rounded-full bg-brand-accent px-10 text-base font-semibold text-white shadow-[0_20px_60px_rgba(201,162,39,0.28)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#A3861D]"
               >
                 Apply Now
               </Link>
               {selectedCourse?.documentUrl && selectedCourse.documentUrl !== '#' ? (
-                <a
-                  href={selectedCourse.documentUrl}
-                  download
-                  className="inline-flex min-h-[64px] items-center justify-center rounded-full border border-slate-200 bg-white px-10 text-base font-semibold text-slate-950 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-slate-50"
-                >
-                  <Download className="h-5 w-5 text-blue-600" />
-                  Download Brochure
-                </a>
+                <DownloadBrochureButton
+                  fileUrl={selectedCourse.documentUrl}
+                  fileName={`${selectedCourse.name}-Brochure.pdf`}
+                  defaultCourseName={selectedCourse.name}
+                  buttonText="Download Brochure"
+                  buttonClassName="inline-flex min-h-[64px] items-center justify-center rounded-full border border-slate-200 bg-white px-10 text-base font-semibold text-slate-950 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-slate-50"
+                />
               ) : (
                 <button
                   disabled

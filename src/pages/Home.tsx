@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, BookOpen, Users, Trophy, Target, Eye, Compass, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Counter from '@/components/Counter';
+import DownloadBrochureButton from '@/components/DownloadBrochureButton';
 import ImageSlider from '@/components/ImageSlider';
 
 const STATS = [
@@ -22,7 +23,7 @@ const ABOUT_IMAGES = [
 
 const MEMORY_JOURNEY = [
   {
-    year: '2022',
+    year: '2023',
     title: 'The Beginning of the Journey',
     caption: 'The first cohort arrived, and the campus began to pulse with possibility.',
     mainImage: '/uploads/gallery/photo-1.jpg',
@@ -119,6 +120,7 @@ export default function Home() {
             alt="GM University campus building"
             className="h-full w-full object-cover"
           />
+           <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent"></div>
         </div>
 
         <div className="relative z-10 min-h-screen flex items-center">
@@ -128,13 +130,13 @@ export default function Home() {
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.9, ease: 'easeOut' }}
-                className="w-full max-w-2xl rounded-[36px] border border-white/10 bg-slate-950/10 p-8 sm:p-12 shadow-[0_35px_90px_rgba(0,0,0,0.25)]"
+                className="w-full max-w-2xl p-8 sm:p-12"
               >
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.9, delay: 0.15 }}
-                  className="text-4xl sm:text-5xl lg:text-5xl font-bold tracking-[-0.04em] text-white leading-tight"
+                  className="text-4xl sm:text-5xl lg:text-5xl font-bold tracking-[-0.04em] text-white leading-tight drop-shadow-lg"
                 >
                   Welcome To Faculty of Computing and Information Technology
                 </motion.h1>
@@ -143,7 +145,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.9, delay: 0.25 }}
-                  className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed"
+                  className="mt-6 text-base sm:text-lg text-white leading-relaxed"
                 >
                   Preparing leaders in Technology
                 </motion.p>
@@ -158,7 +160,7 @@ export default function Home() {
                     href="/uploads/gallery/tour.mp4"
                     target="_blank"
                     rel="noreferrer"
-                    className="hero-cta inline-flex items-center justify-center rounded-full bg-[#FFD700] px-10 py-4 text-sm font-semibold text-[#081018] shadow-[0_20px_60px_rgba(255,215,0,0.25)] transition duration-300 ease-out hover:scale-[1.03] hover:shadow-[0_26px_80px_rgba(255,215,0,0.32)]"
+                    className="hero-cta inline-flex items-center justify-center rounded-full bg-[#C9A227] px-10 py-4 text-sm font-semibold text-[#081018] shadow-[0_20px_60px_rgba(201,162,39,0.25)] transition duration-300 ease-out hover:scale-[1.03] hover:shadow-[0_26px_80px_rgba(201,162,39,0.32)]"
                   >
                     TAKE A TOUR
                     <ArrowRight className="w-4 h-4" />
@@ -479,13 +481,12 @@ To develop global citizens by educating students on emotional, physical, social,
               >
                 Apply for Admission
               </Link>
-              <a
-                href="/uploads/gallery/prospectus.pdf"
-                download
-                className="px-12 py-6 border-2 border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-all text-lg backdrop-blur-sm inline-flex items-center justify-center"
-              >
-                Download Prospectus
-              </a>
+              <DownloadBrochureButton
+                fileUrl="/uploads/gallery/prospectus.pdf"
+                fileName="FCIT-Prospectus.pdf"
+                buttonText="Download Prospectus"
+                buttonClassName="px-12 py-6 border-2 border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-all text-lg backdrop-blur-sm inline-flex items-center justify-center"
+              />
             </div>
           </div>
         </motion.div>

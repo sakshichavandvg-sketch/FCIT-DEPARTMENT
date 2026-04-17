@@ -46,6 +46,12 @@ export const GALLERY: GalleryImage[] = [
   { id: '12', url: '/uploads/gallery/FCIT-photo/FCIT-photo/NSS/WhatsApp Image 2026-04-04 at 4.19.30 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'NSS Outreach' },
   { id: '13', url: '/uploads/gallery/FCIT-photo/FCIT-photo/tech-friction/WhatsApp Image 2026-04-04 at 3.01.45 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'Tech Friction' },
   { id: '14', url: '/uploads/gallery/FCIT-photo/FCIT-photo/women_empowermentcell/WhatsApp Image 2026-04-04 at 4.58.04 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'Women Empowerment' },
+  { id: '15', url: '/uploads/gallery/FCIT-photo/FCIT-photo/CASP/WhatsApp Image 2026-04-04 at 4.24.15 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'CASP Collaboration' },
+  { id: '16', url: '/uploads/gallery/FCIT-photo/FCIT-photo/faculty_corner/WhatsApp Image 2026-04-04 at 4.12.05 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Faculty Corner' },
+  { id: '17', url: '/uploads/gallery/FCIT-photo/FCIT-photo/GMS-TRIP/WhatsApp Image 2026-04-04 at 2.55.41 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'GMS Trip' },
+  { id: '18', url: '/uploads/gallery/FCIT-photo/FCIT-photo/MCA_outreach program/WhatsApp Image 2026-04-04 at 4.33.39 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'MCA Outreach' },
+  { id: '19', url: '/uploads/gallery/FCIT-photo/FCIT-photo/mailka/WhatsApp Image 2026-04-04 at 5.00.42 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'Mailka Event' },
+  { id: '20', url: '/uploads/gallery/FCIT-photo/FCIT-photo/parents_meeting/WhatsApp Image 2026-04-04 at 4.46.13 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Parents Meeting' },
 ];
 
 export const PROJECTS: Project[] = [
@@ -57,7 +63,8 @@ export const PROJECTS: Project[] = [
     description: 'A novel approach to urban traffic control using deep reinforcement learning.',
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800',
     date: '2024-01-20',
-    tags: ['AI', 'Smart City', 'Python']
+    tags: ['AI', 'Smart City', 'Python'],
+    downloadUrl: '#'
   },
   {
     id: 'p2',
@@ -67,7 +74,8 @@ export const PROJECTS: Project[] = [
     description: 'Securing patient records using decentralized ledger technology.',
     image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800',
     date: '2024-02-15',
-    tags: ['Blockchain', 'Healthcare', 'Solidity']
+    tags: ['Blockchain', 'Healthcare', 'Solidity'],
+    downloadUrl: '#'
   },
   {
     id: 'p3',
@@ -77,7 +85,8 @@ export const PROJECTS: Project[] = [
     description: 'Developing models to understand and translate regional languages.',
     image: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=800',
     date: '2023-11-10',
-    tags: ['NLP', 'Machine Learning', 'Linguistics']
+    tags: ['NLP', 'Machine Learning', 'Linguistics'],
+    downloadUrl: '#'
   }
 ];
 
@@ -100,7 +109,7 @@ export const FACULTY: Faculty[] = [
     department: 'Computer Applications',
     email: 'chetankumarhs.fcit.sca@gmu.ac.in',
     phone: '+918296246876',
-    image: '/uploads/gallery/Chethan H S.jpg',
+    image: '/uploads/gallery/Chethan H S.png',
     bio: 'Prof. Chethan H S specializes in full-stack development and Software Engineering & Project Management. He has published several papers on software architecture and leads the SCA practical labs.',
     specialization: ['Web Development', 'Software Engineering', 'Project Management']
   },
