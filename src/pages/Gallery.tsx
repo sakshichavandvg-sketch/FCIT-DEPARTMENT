@@ -6,11 +6,23 @@ import GalleryCarousel from '@/components/GalleryCarousel';
 import { GALLERY } from '@/constants';
 import { GalleryImage } from '@/types';
 
-const CATEGORIES = ['All', 'Events', 'Campus', 'Workshops', 'Achievements','sports','Ideathon'];
+const CATEGORIES = ['All', 'Events', 'Campus', 'Workshops', 'Achievements', 'Sports', 'Orientation'];
+
+const FEATURED_MOMENTS = [
+  { id: 'fm1', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Tech-carnival-2k26/WhatsApp Image 2026-04-04 at 2.37.28 PM.jpeg', title: 'Tech Carnival', caption: 'Energy and celebration on campus.' },
+  { id: 'fm2', url: '/uploads/gallery/FCIT-photo/FCIT-photo/conference_2k25/WhatsApp Image 2026-04-04 at 3.58.10 PM.jpeg', title: 'Conference Day', caption: 'Focused minds and new ideas.' },
+  { id: 'fm3', url: '/uploads/gallery/FCIT-photo/FCIT-photo/workshops/WhatsApp Image 2026-04-04 at 4.20.35 PM.jpeg', title: 'Workshop Moment', caption: 'Learning through doing.' },
+  { id: 'fm4', url: '/uploads/gallery/FCIT-photo/FCIT-photo/student_corner/WhatsApp Image 2026-04-04 at 5.10.18 PM.jpeg', title: 'Student Life', caption: 'Every connection matters.' },
+  { id: 'fm5', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Graduation day/WhatsApp Image 2026-04-04 at 5.17.05 PM.jpeg', title: 'Graduation Day', caption: 'A proud campus milestone.' },
+  { id: 'fm6', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Orientation program/WhatsApp Image 2026-04-04 at 3.08.45 PM.jpeg', title: 'Orientation Day', caption: 'New beginnings and fresh ideas.' },
+  { id: 'fm7', url: '/uploads/gallery/FCIT-photo/FCIT-photo/sports events/WhatsApp Image 2026-04-04 at 3.26.44 PM.jpeg', title: 'Sports Spirit', caption: 'Teamwork out on the field.' },
+  { id: 'fm8', url: '/uploads/gallery/FCIT-photo/FCIT-photo/world cancer day/WhatsApp Image 2026-04-04 at 3.04.20 PM.jpeg', title: 'Community Care', caption: 'Events that bring everyone together.' },
+];
 
 export default function Gallery() {
   const [filter, setFilter] = useState('All');
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+  const [activeFeatured, setActiveFeatured] = useState<string | null>(null);
 
   const filteredImages = filter === 'All' 
     ? GALLERY 
@@ -21,7 +33,7 @@ export default function Gallery() {
       <ParallaxHero
         title="Visual Journey"
         subtitle="Capturing the moments that define our vibrant community."
-        image="/uploads/gallery/img6.jpeg"
+        image="/uploads/gallery/FCIT-photo/FCIT-photo/Graduation day/WhatsApp Image 2026-04-04 at 5.17.05 PM.jpeg"
       />
 
       <div className="max-w-7xl mx-auto px-6 -mt-32 relative z-20">
@@ -72,6 +84,8 @@ export default function Gallery() {
                   src={image.url}
                   alt={image.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -96,6 +110,61 @@ export default function Gallery() {
         </motion.div>
       </section>
 
+      <section className="mt-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-10">
+            <div>
+              <p className="text-sm uppercase tracking-[0.35em] text-brand-accent font-semibold">Featured Moments</p>
+              <h2 className="mt-3 text-4xl font-display font-bold">Expandable Photo Strip</h2>
+            </div>
+            <p className="max-w-2xl text-gray-500">Hover any moment to expand it and reveal the emotion behind the event.</p>
+          </div>
+
+          <div className="overflow-x-auto no-scrollbar">
+            <div className="flex min-w-[1200px] gap-4">
+              {FEATURED_MOMENTS.map((item, index) => {
+                const isActive = activeFeatured === item.id;
+                const isDimmed = activeFeatured !== null && activeFeatured !== item.id;
+
+                return (
+                  <motion.button
+                    key={item.id}
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: index * 0.08, ease: 'easeOut' }}
+                    animate={{
+                      flex: isActive ? '2.4 1 0%' : isDimmed ? '0.8 1 0%' : '1 1 140px',
+                      opacity: isDimmed ? 0.8 : 1,
+                    }}
+                    onHoverStart={() => setActiveFeatured(item.id)}
+                    onHoverEnd={() => setActiveFeatured(null)}
+                    className="group relative min-w-[140px] overflow-hidden rounded-[30px] bg-slate-900 shadow-[0_30px_80px_rgba(15,23,42,0.12)] transition-all duration-500 ease-in-out"
+                  >
+                    <motion.img
+                      src={item.url}
+                      alt={item.title}
+                      className="h-[420px] w-full object-cover transition-transform duration-700"
+                      animate={{ scale: isActive ? 1.06 : 1 }}
+                      whileHover={{ scale: 1.08 }}
+                      loading="lazy"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <p className="text-sm uppercase tracking-[0.3em] text-amber-200">Featured</p>
+                      <h3 className="mt-3 text-2xl font-semibold text-white">{item.title}</h3>
+                      <p className="mt-2 text-sm text-slate-200/90 font-accent">{item.caption}</p>
+                    </div>
+                  </motion.button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Lightbox */}
       <AnimatePresence>
         {selectedImage && (
@@ -117,6 +186,8 @@ export default function Gallery() {
                 src={selectedImage.url}
                 alt={selectedImage.title}
                 className="w-full h-full object-contain"
+                loading="lazy"
+                decoding="async"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute bottom-10 left-10 text-white">

@@ -19,7 +19,7 @@ export default function Contact() {
                     Contact the Department
                   </span>
                   <h1 className="text-5xl font-display font-bold tracking-tight text-slate-950">
-                    Get in touch with FCIT Department
+                    We are ready to assist you. Get in touch with us today.
                   </h1>
                   <p className="text-lg text-slate-600 leading-relaxed">
                     Have questions about admissions, programs, or research collaborations? Send us a message and our department team will respond shortly.
@@ -33,8 +33,16 @@ export default function Contact() {
                     </div>
                     <h2 className="text-xl font-semibold mb-2">Visit Us</h2>
                     <p className="text-sm text-slate-200 leading-relaxed">
-                      FCIT Department, GMU Campus<br />123 University Avenue, Tech City
+                      FACULTY OF COMPUTING AND IT, GMU Campus<br />1st Floor , Room No:W120
                     </p>
+                    <a
+                      href="https://maps.app.goo.gl/n7UCKmb6t9sqeGQe7?g_st=awb"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-6 inline-flex items-center justify-center rounded-3xl border border-white/20 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-accent hover:text-slate-950"
+                    >
+                      View Location on Map
+                    </a>
                   </div>
                   <div className="rounded-3xl bg-slate-950/95 p-8 text-white shadow-lg">
                     <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-accent mb-6">
@@ -42,7 +50,7 @@ export default function Contact() {
                     </div>
                     <h2 className="text-xl font-semibold mb-2">Email Us</h2>
                     <p className="text-sm text-slate-200 leading-relaxed">
-                      admissions@fcit.edu<br />info@fcit.edu
+                      dean.fcit@gmu.ac.in<br />gmu@fcit.edu
                     </p>
                   </div>
                   <div className="rounded-3xl bg-slate-950/95 p-8 text-white shadow-lg">
@@ -51,7 +59,7 @@ export default function Contact() {
                     </div>
                     <h2 className="text-xl font-semibold mb-2">Call Us</h2>
                     <p className="text-sm text-slate-200 leading-relaxed">
-                      +91 98765 43210<br />+91 91234 56789
+                      +91 9141158736
                     </p>
                   </div>
                 </div>

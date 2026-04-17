@@ -20,7 +20,7 @@ export interface School {
 export interface GalleryImage {
   id: string;
   url: string;
-  category: 'Events' | 'Campus' | 'Workshops' | 'Achievements';
+  category: 'Events' | 'Campus' | 'Workshops' | 'Achievements' | 'Sports' | 'Orientation';
   date: string;
   title: string;
 }

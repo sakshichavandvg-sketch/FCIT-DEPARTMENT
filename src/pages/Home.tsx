@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, BookOpen, Users, Trophy, Target, Eye, Compass, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Counter from '@/components/Counter';
@@ -17,6 +18,37 @@ const ABOUT_IMAGES = [
   '/uploads/gallery/photo-3.jpg',
   '/uploads/gallery/photo-4.jpg',
   '/uploads/gallery/photo-5.jpg',
+];
+
+const MEMORY_JOURNEY = [
+  {
+    year: '2022',
+    title: 'The Beginning of the Journey',
+    caption: 'The first cohort arrived, and the campus began to pulse with possibility.',
+    mainImage: '/uploads/gallery/photo-1.jpg',
+    secondaryImages: ['/uploads/gallery/photo-2.jpg', '/uploads/gallery/photo-3.jpg'],
+  },
+  {
+    year: '2023',
+    title: 'Research Comes Alive',
+    caption: 'Early innovation sparks took root in labs, workshops, and student collaborations.',
+    mainImage: '/uploads/gallery/photo-4.jpg',
+    secondaryImages: ['/uploads/gallery/photo-5.jpg', '/uploads/gallery/photo-1.jpg'],
+  },
+  {
+    year: '2024',
+    title: 'Community Momentum',
+    caption: 'The campus became a stage for events, shared stories, and meaningful connections.',
+    mainImage: '/uploads/gallery/photo-2.jpg',
+    secondaryImages: ['/uploads/gallery/photo-3.jpg', '/uploads/gallery/photo-4.jpg'],
+  },
+  {
+    year: '2025',
+    title: 'A Future in Focus',
+    caption: 'New leaders emerged, ready to carry the spirit of FCIT into tomorrow.',
+    mainImage: '/uploads/gallery/photo-5.jpg',
+    secondaryImages: ['/uploads/gallery/photo-1.jpg', '/uploads/gallery/photo-2.jpg'],
+  },
 ];
 
 const CORE_VALUES = [
@@ -42,7 +74,12 @@ const CORE_VALUES = [
 
 export default function Home() {
   const deanHeading = 'Welcome to the Department of FCIT';
-  const deanMessage = 'Welcome to the Department of FCIT! Our programs foster technical depth, innovation, and hands-on learning for a fast-changing world. Join us to experience collaborative research, expert faculty, and vibrant student life.';
+  const deanAuthor = 'Dean, Faculty of Computing and Information Technology';
+  const deanMessage = [
+    { text: 'Welcome to the Department of FCIT! Our programs foster ' },
+    { text: 'technical depth, innovation, and hands-on learning', highlight: true },
+    { text: ' for a fast-changing world. Join us to experience collaborative research, expert faculty, and vibrant student life.', highlight: false },
+  ];
 
   const headingVariant = {
     hidden: { opacity: 0 },
@@ -64,60 +101,73 @@ export default function Home() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.28 } },
   };
 
+  const timelineRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ['start end', 'end start'],
+  });
+  const timelineProgress = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const pulseY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const pulseOpacity = useTransform(scrollYProgress, [0, 0.05, 0.95, 1], [0, 1, 1, 0]);
+
   return (
     <div className="pb-20">
-      {/* Video Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover scale-105"
-          >
-            <source src="/uploads/gallery/tour.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-brand-primary/55" />
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/uploads/gallery/GM.png"
+            alt="GM University campus building"
+            className="h-full w-full object-cover"
+          />
         </div>
 
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <span className="inline-block px-4 py-1 bg-brand-accent text-white text-xs font-bold uppercase tracking-[0.3em] rounded-full mb-6">
-              Empowering Digital Minds
-            </span>
-            <h1 className="text-6xl md:text-9xl font-display font-bold text-white mb-8 tracking-tighter leading-[0.9]">
-              FCIT <span className="text-brand-accent italic">Department</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-              Faculty of Computing and IT (FCIT) will have a transformative impact on society through continual innovation in computing and IT education, research, skill development, creativity, and entrepreneurship
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link
-                to="/schools"
-                className="px-10 py-5 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-white transition-all shadow-2xl flex items-center justify-center gap-2 group"
+        <div className="relative z-10 min-h-screen flex items-center">
+          <div className="max-w-7xl mx-auto w-full px-6 py-10 lg:px-8">
+            <div className="flex w-full justify-end">
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.9, ease: 'easeOut' }}
+                className="w-full max-w-2xl rounded-[36px] border border-white/10 bg-slate-950/10 p-8 sm:p-12 shadow-[0_35px_90px_rgba(0,0,0,0.25)]"
               >
-                Explore Schools
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              
-            </div>
-          </motion.div>
-        </div>
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.9, delay: 0.15 }}
+                  className="text-4xl sm:text-5xl lg:text-5xl font-bold tracking-[-0.04em] text-white leading-tight"
+                >
+                  Welcome To Faculty of Computing and Information Technology
+                </motion.h1>
 
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"
-        >
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
-            <div className="w-1 h-2 bg-white rounded-full" />
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.9, delay: 0.25 }}
+                  className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed"
+                >
+                  Preparing leaders in Technology
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.9, delay: 0.35 }}
+                  className="mt-10"
+                >
+                  <a
+                    href="/uploads/gallery/tour.mp4"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hero-cta inline-flex items-center justify-center rounded-full bg-[#FFD700] px-10 py-4 text-sm font-semibold text-[#081018] shadow-[0_20px_60px_rgba(255,215,0,0.25)] transition duration-300 ease-out hover:scale-[1.03] hover:shadow-[0_26px_80px_rgba(255,215,0,0.32)]"
+                  >
+                    TAKE A TOUR
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Stats Section with Counting Numbers */}
@@ -135,7 +185,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-brand-surface rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
                 <stat.icon className="w-8 h-8 text-brand-accent group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-4xl font-display font-bold group-hover:text-white transition-colors mb-2">
+              <h3 className="text-4xl sm:text-5xl font-sans font-semibold group-hover:text-white transition-colors mb-2">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </h3>
               <p className="text-sm font-bold text-gray-400 uppercase tracking-widest group-hover:text-white/70 transition-colors">
@@ -158,8 +208,7 @@ export default function Home() {
             <div className="space-y-4">
               <span className="text-brand-accent font-bold uppercase tracking-[0.4em] text-xs">Excellence in Tech</span>
               <h2 className="text-5xl md:text-7xl font-display font-bold leading-[0.95] tracking-tighter">
-                A Legacy of <br />
-                <span className="text-brand-accent italic">Excellence.</span>
+                A Legacy of <br />Excellence.
               </h2>
             </div>
             <p className="text-xl text-gray-600 leading-relaxed font-light">
@@ -224,41 +273,141 @@ To develop global citizens by educating students on emotional, physical, social,
             </span>
             <motion.h2
               variants={headingVariant}
-              className="text-5xl md:text-6xl font-display font-bold mt-6"
+              className="text-5xl md:text-6xl font-sans font-semibold mt-6 tracking-[-0.04em] text-slate-950 leading-tight"
             >
-              {deanHeading.split(' ').map((word, index) => (
-                <motion.span
-                  key={`${word}-${index}`}
-                  variants={wordVariant}
-                  className="inline-flex flex-wrap whitespace-nowrap mr-3"
-                >
-                  {word.split('').map((char, charIndex) => (
-                    <motion.span
-                      key={`${word}-${charIndex}`}
-                      variants={wordLetterVariant}
-                      className="inline-block"
-                    >
-                      {char}
-                    </motion.span>
-                  ))}
-                </motion.span>
-              ))}
+              {deanHeading}
             </motion.h2>
+            <p className="mt-4 text-lg font-sans font-semibold text-slate-700 max-w-2xl">
+              {deanAuthor}
+            </p>
             <motion.p
               variants={paragraphVariant}
-              className="mt-10 text-xl text-gray-600 leading-relaxed flex flex-wrap gap-2"
+              className="mt-10 text-base sm:text-lg text-slate-700 leading-[1.75] font-sans font-normal max-w-3xl"
             >
-              {deanMessage.split(' ').map((word, index) => (
-                <motion.span
-                  key={`${word}-${index}`}
-                  variants={wordVariant}
-                  className="inline-block"
+              {deanMessage.map((segment, index) => (
+                <span
+                  key={index}
+                  className={segment.highlight ? 'font-semibold' : undefined}
                 >
-                  {word}
-                </motion.span>
+                  {segment.text}
+                </span>
               ))}
             </motion.p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Memory Spine Section */}
+      <section ref={timelineRef} className="relative overflow-hidden py-40 px-6 bg-slate-950 text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(249,115,22,0.10),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(251,146,60,0.08),transparent_20%),linear-gradient(180deg,#020617_0%,#0b1220_55%,#050812_100%)]" />
+        <div className="absolute inset-0 opacity-70 bg-noise-pattern pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center mb-16 relative z-10">
+            <p className="text-sm uppercase tracking-[0.35em] text-amber-200/80 font-semibold">Memory Spine</p>
+            <h2 className="mt-4 text-4xl md:text-5xl font-display font-bold text-white">Move through moments, not milestones</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-slate-300 text-lg leading-relaxed">
+              A continuous living path of activation, where each memory blooms into clarity as your scroll carries the pulse forward.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="absolute left-1/2 top-0 h-full w-2 -translate-x-1/2 rounded-full bg-white/10 blur-sm" />
+            <div className="absolute left-1/2 top-0 h-full w-4 -translate-x-1/2 rounded-full bg-gradient-to-b from-amber-200 via-orange-300 to-amber-100 opacity-30 blur-2xl" />
+            <motion.div
+              style={{ height: timelineProgress }}
+              className="absolute left-1/2 top-0 w-2 -translate-x-1/2 rounded-full bg-gradient-to-b from-white via-amber-100 to-orange-300 shadow-[0_0_60px_rgba(248,180,48,0.35)]"
+            />
+            <motion.div
+              style={{ top: pulseY, opacity: pulseOpacity }}
+              className="absolute left-1/2 -translate-x-1/2 h-14 w-14 rounded-full bg-white/90 shadow-[0_0_40px_rgba(255,255,255,0.4)] ring-8 ring-orange-300/30"
+            />
+
+            <div className="relative space-y-28 py-10">
+              {MEMORY_JOURNEY.map((memory, index) => {
+                const isLeft = index % 2 === 0;
+                return (
+                  <div key={memory.year} className="relative grid items-center gap-6 lg:grid-cols-[minmax(320px,1fr)_80px_minmax(320px,1fr)]">
+                    <div className={`${isLeft ? 'lg:col-start-1 lg:text-right lg:pr-14' : 'lg:col-start-3 lg:text-left lg:pl-14'}`}>
+                      <motion.div
+                        initial={{ opacity: 0, y: 32, scale: 1.08, filter: 'blur(10px)' }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.9, ease: 'easeOut' }}
+                        className="relative inline-flex items-center justify-center rounded-full bg-white/10 px-5 py-2 text-sm font-semibold tracking-[0.35em] text-amber-100 border border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)]"
+                      >
+                        {memory.year}
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 28, scale: 1.08, filter: 'blur(14px)' }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 1, ease: 'easeOut', delay: 0.12 }}
+                        className="mt-8 rounded-[36px] border border-white/10 bg-slate-900/80 p-8 shadow-[0_40px_120px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+                      >
+                        <h3 className="text-3xl font-semibold leading-tight text-white">{memory.title}</h3>
+                        <p className="mt-4 max-w-xl text-slate-300 text-lg leading-relaxed font-accent">{memory.caption}</p>
+                      </motion.div>
+                    </div>
+
+                    <div className="relative flex justify-center lg:order-2">
+                      <div className="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.35)] ring-4 ring-orange-300/20" />
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 88 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.9, ease: 'easeOut' }}
+                        className={`absolute top-1/2 h-[2px] bg-gradient-to-r ${isLeft ? 'right-full' : 'left-full'} from-transparent via-orange-300 to-transparent`}
+                        style={isLeft ? { right: '50%', transform: 'translateY(-50%)' } : { left: '50%', transform: 'translateY(-50%)' }}
+                      />
+                    </div>
+
+                    <div className={`${isLeft ? 'lg:col-start-3 lg:text-left lg:pl-14' : 'lg:col-start-1 lg:text-right lg:pr-14'}`}>
+                      <motion.div
+                        initial={{ opacity: 0, y: 28, scale: 1.08, filter: 'blur(12px)' }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 1, ease: 'easeOut', delay: 0.16 }}
+                        className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-slate-900/90 shadow-[0_50px_140px_rgba(0,0,0,0.5)]"
+                      >
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.12),transparent_42%)] opacity-0 transition duration-700 group-hover:opacity-100" />
+                        <div className="relative grid gap-4 p-5 sm:grid-cols-[1.4fr_0.9fr]">
+                          <motion.div
+                            whileHover={{ y: -4, scale: 1.02 }}
+                            className="relative overflow-hidden rounded-[32px] border border-white/10 shadow-2xl"
+                          >
+                            <img
+                              src={memory.mainImage}
+                              alt={`${memory.year} main memory`}
+                              className="h-80 w-full object-cover transition duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                          </motion.div>
+
+                          <div className="grid gap-4">
+                            {memory.secondaryImages.map((src) => (
+                              <motion.div
+                                key={src}
+                                whileHover={{ y: -4, scale: 1.02 }}
+                                className="overflow-hidden rounded-[28px] border border-white/10 shadow-2xl"
+                              >
+                                <img
+                                  src={src}
+                                  alt={`${memory.year} memory secondary`}
+                                  className="h-36 w-full object-cover transition duration-500"
+                                />
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -318,7 +467,7 @@ To develop global citizens by educating students on emotional, physical, social,
           
           <div className="relative z-10 max-w-3xl mx-auto space-y-10">
             <h2 className="text-5xl md:text-8xl font-display font-bold tracking-tighter leading-[0.9]">
-              Shape the <span className="text-brand-accent italic">Future</span> with Us.
+              Shape the Future with Us.
             </h2>
             <p className="text-xl text-white/60 font-light leading-relaxed">
               Admissions for the 2026 academic session are now open. Take the first step towards a rewarding career in technology.

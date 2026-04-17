@@ -31,7 +31,9 @@ export default function Navbar() {
     <nav
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
-        isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
+        isScrolled
+          ? 'bg-[#0B1F3A]/95 backdrop-blur-xl shadow-[0_25px_80px_rgba(0,0,0,0.22)]'
+          : 'bg-[#0B1F3A]'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -41,7 +43,7 @@ export default function Navbar() {
             alt="FCIT Department logo"
             className="w-12 h-12 rounded-lg object-cover"
           />
-          <span className="font-display font-bold text-xl tracking-tighter">
+          <span className="font-display font-bold text-xl tracking-tighter text-white drop-shadow-[0_0_10px_rgba(255,234,133,0.25)]">
             FCIT Department
           </span>
         </Link>
@@ -53,15 +55,17 @@ export default function Navbar() {
               key={link.path}
               to={link.path}
               className={cn(
-                'text-sm font-medium transition-colors hover:text-brand-accent relative',
-                location.pathname === link.path ? 'text-brand-accent' : 'text-brand-primary'
+                'text-sm font-medium transition duration-300 ease-in-out relative text-white hover:text-[#FFEA85] hover:drop-shadow-[0_0_16px_rgba(255,234,133,0.45)]',
+                location.pathname === link.path
+                  ? 'text-[#FFEA85] drop-shadow-[0_0_14px_rgba(255,234,133,0.35)]'
+                  : 'text-white'
               )}
             >
               {link.name}
               {location.pathname === link.path && (
                 <motion.div
                   layoutId="nav-underline"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-accent"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#FFEA85]"
                 />
               )}
             </Link>
@@ -70,7 +74,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-brand-primary"
+          className="md:hidden p-2 text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X /> : <Menu />}
@@ -84,7 +88,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white shadow-xl p-6 md:hidden flex flex-col gap-4"
+            className="absolute top-full left-0 right-0 bg-[#0B1F3A] shadow-[0_35px_70px_rgba(0,0,0,0.25)] p-6 md:hidden flex flex-col gap-4"
           >
             {NAV_LINKS.map((link) => (
               <Link
@@ -92,8 +96,8 @@ export default function Navbar() {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  'text-lg font-medium py-2 border-b border-gray-100',
-                  location.pathname === link.path ? 'text-brand-accent' : 'text-brand-primary'
+                  'text-lg font-medium py-2 border-b border-white/10 text-white transition duration-300 ease-in-out hover:text-[#FFEA85]',
+                  location.pathname === link.path ? 'text-[#FFEA85]' : 'text-white'
                 )}
               >
                 {link.name}

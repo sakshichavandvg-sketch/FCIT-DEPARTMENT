@@ -32,15 +32,20 @@ export const SCHOOLS: School[] = [
 ];
 
 export const GALLERY: GalleryImage[] = [
-  { id: '1', url: '/uploads/gallery/techfest.jpeg', category: 'Events', date: '2024-03-15', title: 'Annual Tech Fest' },
-  { id: '2', url: '/uploads/gallery/ai-workshop.jpeg', category: 'Workshops', date: '2024-02-20', title: 'AI Workshop' },
-  { id: '3', url: '/uploads/gallery/sports.jpeg', category: 'Events', date: '2024-01-10', title: 'Sports Day' },
-  { id: '4', url: '/uploads/gallery/img1.jpeg', category: 'Achievements', date: '2023-12-05', title: 'Agmaya Winners' },
-  { id: '5', url: '/uploads/gallery/Ideathon.jpeg', category: 'Events', date: '2024-04-01', title: 'Ideathon' },
-  { id: '6', url: '/uploads/gallery/img3.jpeg', category: 'Workshops', date: '2024-03-25', title: 'Seminar' },
-  { id: '7', url: '/uploads/gallery/img2.jpeg', category: 'Events', date: '2024-03-25', title: 'Participant Photos' },
-  { id: '8', url: '/uploads/gallery/img4.jpeg', category: 'Workshops', date: '2024-03-25', title: 'Seminar' },
-  { id: '9', url: '/uploads/gallery/etnic.jpeg', category: 'Events', date: '2024-03-25', title: 'Etnic Festival' },
+  { id: '1', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Tech-carnival-2k26/WhatsApp Image 2026-04-04 at 2.37.28 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'Tech Carnival' },
+  { id: '2', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Graduation day/WhatsApp Image 2026-04-04 at 5.17.05 PM.jpeg', category: 'Achievements', date: '2026-04-04', title: 'Graduation Day' },
+  { id: '3', url: '/uploads/gallery/FCIT-photo/FCIT-photo/conference_2k25/WhatsApp Image 2026-04-04 at 3.58.10 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Conference Event' },
+  { id: '4', url: '/uploads/gallery/FCIT-photo/FCIT-photo/workshops/WhatsApp Image 2026-04-04 at 4.20.35 PM.jpeg', category: 'Workshops', date: '2026-04-04', title: 'Workshop Session' },
+  { id: '5', url: '/uploads/gallery/FCIT-photo/FCIT-photo/student_corner/WhatsApp Image 2026-04-04 at 5.10.18 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Student Life' },
+  { id: '6', url: '/uploads/gallery/FCIT-photo/FCIT-photo/sports events/WhatsApp Image 2026-04-04 at 3.26.44 PM.jpeg', category: 'Sports', date: '2026-04-04', title: 'Sports Moment' },
+  { id: '7', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Orientation program/WhatsApp Image 2026-04-04 at 3.08.45 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Orientation Day' },
+  { id: '8', url: '/uploads/gallery/FCIT-photo/FCIT-photo/ideathon/WhatsApp Image 2026-04-04 at 3.22.27 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'Idea Challenge' },
+  { id: '9', url: '/uploads/gallery/FCIT-photo/FCIT-photo/world cancer day/WhatsApp Image 2026-04-04 at 3.04.20 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'Community Health' },
+  { id: '10', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Ethnic day/WhatsApp Image 2026-04-04 at 5.04.11 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Ethnic Celebration' },
+  { id: '11', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Kannada kalavaibhava/kannada.jpeg', category: 'Events', date: '2026-04-04', title: 'Kannada Kalavaibhava' },
+  { id: '12', url: '/uploads/gallery/FCIT-photo/FCIT-photo/NSS/WhatsApp Image 2026-04-04 at 4.19.30 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'NSS Outreach' },
+  { id: '13', url: '/uploads/gallery/FCIT-photo/FCIT-photo/tech-friction/WhatsApp Image 2026-04-04 at 3.01.45 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'Tech Friction' },
+  { id: '14', url: '/uploads/gallery/FCIT-photo/FCIT-photo/women_empowermentcell/WhatsApp Image 2026-04-04 at 4.58.04 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'Women Empowerment' },
 ];
 
 export const PROJECTS: Project[] = [
