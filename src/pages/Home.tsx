@@ -30,21 +30,21 @@ const MEMORY_JOURNEY = [
     secondaryImages: ['/uploads/gallery/photo-2.jpg', '/uploads/gallery/photo-3.jpg'],
   },
   {
-    year: '2023',
+    year: '2024',
     title: 'Research Comes Alive',
     caption: 'Early innovation sparks took root in labs, workshops, and student collaborations.',
     mainImage: '/uploads/gallery/photo-4.jpg',
     secondaryImages: ['/uploads/gallery/photo-5.jpg', '/uploads/gallery/photo-1.jpg'],
   },
   {
-    year: '2024',
+    year: '2025',
     title: 'Community Momentum',
     caption: 'The campus became a stage for events, shared stories, and meaningful connections.',
     mainImage: '/uploads/gallery/photo-2.jpg',
     secondaryImages: ['/uploads/gallery/photo-3.jpg', '/uploads/gallery/photo-4.jpg'],
   },
   {
-    year: '2025',
+    year: '2026',
     title: 'A Future in Focus',
     caption: 'New leaders emerged, ready to carry the spirit of FCIT into tomorrow.',
     mainImage: '/uploads/gallery/photo-5.jpg',
@@ -55,19 +55,35 @@ const MEMORY_JOURNEY = [
 const CORE_VALUES = [
   {
     title: 'Vision',
-    description: 'To be a leading center of excellence in computing and information technology, fostering innovation, research, and transformative learning to shape the digital future.',
+    description: [
+      'To be a leading center of excellence in computing and information technology.',
+      'To foster innovation, research, and transformative learning.',
+      'To shape the digital future through quality education.'
+    ],
     icon: Eye,
     color: 'bg-blue-500',
   },
   {
     title: 'Mission',
-    description: 'To disseminate knowledge and conduct research in computing and IT with a learner-centric approach.\n- To teach skills such as critical thinking, creativity and innovation, collaboration, communication, technical and digital literacy, flexibility and adaptability, cultural values, and leadership and responsibility.\n- To develop global citizens by educating students on emotional, physical, social, economic, environmental, spiritual dimensions of human growth in addition to intellectual pursuits.\n- To address real-world challenges and to establish the groundwork for entrepreneurship and lifelong learning.',
+    description: [
+      'To disseminate knowledge and conduct research in computing and IT with a learner-centric approach.',
+      'To develop critical thinking, creativity, innovation, collaboration, and communication skills.',
+      'To enhance technical, digital literacy, flexibility, and adaptability.',
+      'To nurture cultural values, leadership, and responsibility.',
+      'To develop global citizens with emotional, social, environmental, and intellectual growth.'
+    ],
     icon: Target,
     color: 'bg-purple-500',
   },
   {
     title: 'Objectives',
-    description: 'Impart comprehensive engineering education aligned with industry needs.\nPromote research and development activities fostering innovation.\nEncourage sustainable and ethical practices in engineering projects.\nDevelop leadership qualities and lifelong learning habits in students.\nEngage with community and industry to apply knowledge practically.',
+    description: [
+      'Impart comprehensive engineering education aligned with industry needs.',
+      'Promote research and development fostering innovation.',
+      'Encourage sustainable and ethical engineering practices.',
+      'Develop leadership qualities and lifelong learning habits.',
+      'Engage with community and industry for practical application.'
+    ],
     icon: Compass,
     color: 'bg-emerald-500',
   },
@@ -213,13 +229,15 @@ export default function Home() {
                 A Legacy of <br />Excellence.
               </h2>
             </div>
-            <p className="text-xl text-gray-600 leading-relaxed font-light">
-              To disseminate knowledge and conduct research in computing and IT with learner centric approach - To teach skills such as critical thinking, creativity and innovation, collaboration, communication, technical and digital, flexibility and adaptability, cultural values, and leadership and responsibility
-
-To develop global citizens by educating students on emotional, physical, social, economic, environmental, spiritual dimensions of human growth in addition to intellectual pursuits
-
-- To address real-world challenges and to establish the groundwork for entrepreneurship and lifelong learning Join us in our mission to innovate and excel.
-            </p>
+            <p className="text-lg text-gray-600 leading-loose font-light text-justify max-w-4xl mx-auto tracking-wide">
+  To disseminate knowledge and conduct research in computing and information technology with a learner-centric approach. 
+  To teach essential skills such as critical thinking, creativity and innovation, collaboration, communication, technical 
+  and digital proficiency, flexibility and adaptability, cultural values, and leadership and responsibility. 
+  To develop global citizens by educating students across emotional, physical, social, economic, environmental, spiritual, 
+  and intellectual dimensions of human growth in addition to intellectual pursuits. 
+  To address real-world challenges and establish the groundwork for entrepreneurship and lifelong learning. 
+  Join us in our mission to innovate and excel.
+</p>
             <div className="grid grid-cols-2 gap-8 pt-6">
               <div className="space-y-2">
                 <p className="text-3xl font-display font-bold text-brand-primary">35%</p>
@@ -477,7 +495,7 @@ To develop global citizens by educating students on emotional, physical, social,
             <div className="flex flex-col sm:flex-row gap-6 justify-center pt-6">
               <Link
                 to="/contact"
-                className="px-12 py-6 bg-brand-accent text-white font-bold rounded-full hover:bg-white hover:text-brand-accent transition-all shadow-xl text-lg inline-flex items-center justify-center"
+                className="px-12 py-6 bg-[#0B1F3A]   // example navy text-white font-bold rounded-full hover:bg-white hover:text-brand-accent transition-all shadow-xll text-lg inline-flex items-center justify-center"
               >
                 Apply for Admission
               </Link>
@@ -485,7 +503,7 @@ To develop global citizens by educating students on emotional, physical, social,
                 fileUrl="/uploads/gallery/prospectus.pdf"
                 fileName="FCIT-Prospectus.pdf"
                 buttonText="Download Prospectus"
-                buttonClassName="px-12 py-6 border-2 border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-all text-lg backdrop-blur-sm inline-flex items-center justify-center"
+                buttonClassName="px-12 py-6 bg-[#0B1F3A]   // example navy text-white font-bold rounded-full hover:bg-white hover:text-brand-accent transition-all shadow-xll text-lg inline-flex items-center justify-center"
               />
             </div>
           </div>

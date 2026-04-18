@@ -39,7 +39,7 @@ export default function Schools() {
       <ParallaxHero
         title="Our Schools"
         subtitle="Specialized centers of excellence in Computer Applications and Computer Science."
-        image="/uploads/gallery/km.jpeg"
+        image="/uploads/gallery/km.png"
       />
 
       <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-20">

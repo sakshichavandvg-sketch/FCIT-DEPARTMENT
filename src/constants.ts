@@ -11,6 +11,7 @@ export const SCHOOLS: School[] = [
       { id: 'bca', name: 'BCA', description: 'A 3-year undergraduate program focusing on computer applications.', duration: '3 Years', level: 'Undergraduate', documentUrl: '/uploads/gallery/Program BCA.pdf', image: '/uploads/gallery/bca.png' },
       { id: 'bca-ai', name: 'BCA in AI & Data Analytics', description: 'A 3-year undergraduate program blending AI and analytics with core application development.', duration: '3 Years', level: 'Undergraduate', documentUrl: '#', image: '/uploads/gallery/bca-ai.png' },
       { id: 'bca-cyber', name: 'BCA in Cybersecurity', description: 'A 3-year undergraduate program focused on cybersecurity principles and practices.', duration: '3 Years', level: 'Undergraduate', documentUrl: '#', image: '/uploads/gallery/bcy.png' },
+      { id: 'bca-data', name: 'BCA in Data Science', description: 'A 3-year postgraduate program in data science, machine learning, and big data technologies.', duration: '3 Years', level: 'Undergraduate', documentUrl: '#', image: '/uploads/gallery/mds.png' },
       { id: 'mca', name: 'MCA', description: 'A 2-year postgraduate program for advanced software skills.', duration: '2 Years', level: 'Postgraduate', documentUrl: '#', image: '/uploads/gallery/mca.png' },
       { id: 'mca-ai', name: 'MCA in AI & Data Analytics', description: 'A 2-year postgraduate program focusing on AI, analytics, and applied research.', duration: '2 Years', level: 'Postgraduate', documentUrl: '#', image: '/uploads/gallery/mds.png' },
       { id: 'mca-cyber', name: 'MCA in Cybersecurity', description: 'A 2-year postgraduate program centered on cyber defense and security systems.', duration: '2 Years', level: 'Postgraduate', documentUrl: '#', image: '/uploads/gallery/mcy.png' },
@@ -27,6 +28,7 @@ export const SCHOOLS: School[] = [
       { id: 'msc-cs', name: 'M.Sc in Computer Science', description: 'A 2-year postgraduate program focusing on advanced computing theory and research.', duration: '2 Years', level: 'Postgraduate', documentUrl: '#', image: '/uploads/gallery/mca.png' },
       { id: 'msc-cyber', name: 'M.Sc in Cybersecurity', description: 'A 2-year postgraduate program focused on cybersecurity research and practice.', duration: '2 Years', level: 'Postgraduate', documentUrl: '#', image: '/uploads/gallery/mcy.png' },
       { id: 'msc-ai', name: 'M.Sc in AI & Data Analytics', description: 'A 2-year postgraduate program centered on artificial intelligence and data analytics.', duration: '2 Years', level: 'Postgraduate', documentUrl: '#', image: '/uploads/gallery/mds.png' },
+       { id: 'msc-data', name: 'M.Sc in Data Science', description: 'A 2-year postgraduate program centered on data science.', duration: '2 Years', level: 'Postgraduate', documentUrl: '#', image: '/uploads/gallery/mds.png' },
     ]
   }
 ];
@@ -49,8 +51,8 @@ export const GALLERY: GalleryImage[] = [
   { id: '15', url: '/uploads/gallery/FCIT-photo/FCIT-photo/CASP/WhatsApp Image 2026-04-04 at 4.24.15 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'CASP Collaboration' },
   { id: '16', url: '/uploads/gallery/FCIT-photo/FCIT-photo/faculty_corner/WhatsApp Image 2026-04-04 at 4.12.05 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Faculty Corner' },
   { id: '17', url: '/uploads/gallery/FCIT-photo/FCIT-photo/GMS-TRIP/WhatsApp Image 2026-04-04 at 2.55.41 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'GMS Trip' },
-  { id: '18', url: '/uploads/gallery/FCIT-photo/FCIT-photo/MCA_outreach program/WhatsApp Image 2026-04-04 at 4.33.39 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'MCA Outreach' },
-  { id: '19', url: '/uploads/gallery/FCIT-photo/FCIT-photo/mailka/WhatsApp Image 2026-04-04 at 5.00.42 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'Mailka Event' },
+  { id: '18', url: '/uploads/gallery/FCIT-photo/FCIT-photo/MCA_outreach program/Mca.jpeg', category: 'Events', date: '2026-04-04', title: 'MCA Outreach' },
+  { id: '19', url: '/uploads/gallery/FCIT-photo/FCIT-photo/MCA_outreach program/Mca1.jpeg', category: 'Events', date: '2026-04-04', title: 'MCA Outreach Event' },
   { id: '20', url: '/uploads/gallery/FCIT-photo/FCIT-photo/parents_meeting/WhatsApp Image 2026-04-04 at 4.46.13 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Parents Meeting' },
 ];
 

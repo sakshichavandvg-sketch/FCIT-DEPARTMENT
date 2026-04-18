@@ -51,13 +51,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
           <img
-            src="/uploads/gallery/logo.jpeg"
+            src="/uploads/gallery/l1.png"
             alt="FCIT Department logo"
-            className="w-18 h-18 object-contain"
+            className="w-16 h-16 object-contain"
           />
-          <span className="font-display font-bold text-xl tracking-tighter text-white drop-shadow-[0_0_10px_rgba(255,234,133,0.25)]">
-            FCIT Department
-          </span>
+          <span className="font-display font-semibold text-xl tracking-wide text-white drop-shadow-[0_0_10px_rgba(255,234,133,0.25)]">
+  Faculty Of Computing and Information Technology
+</span>
         </Link>
 
         {/* Desktop Nav */}
