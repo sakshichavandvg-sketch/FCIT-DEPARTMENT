@@ -9,18 +9,18 @@ import { GalleryImage } from '@/types';
 const CATEGORIES = ['All', 'Events', 'Campus', 'Workshops', 'Achievements', 'Sports', 'Orientation'];
 
 const FEATURED_MOMENTS = [
-  { id: 'fm1', url: '/uploads/gallery/FCIT-photo/FCIT-photo/GMS-TRIP/WhatsApp Image 2026-04-04 at 2.55.41 PM (1).jpeg', title: 'GMS Trip', caption: 'A memorable learning journey outside the classroom.' },
-  { id: 'fm2', url: '/uploads/gallery/FCIT-photo/FCIT-photo/parents_meeting/WhatsApp Image 2026-04-04 at 4.40.40 PM (1).jpeg', title: 'Parent Meet', caption: 'Building stronger bonds with families and students.' },
-  { id: 'fm3', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Tech-carnival-2k26/WhatsApp Image 2026-04-04 at 2.37.30 PM.jpeg', title: 'Carnival Energy', caption: 'Hands-on innovation and campus excitement.' },
-  { id: 'fm4', url: '/uploads/gallery/FCIT-photo/FCIT-photo/ideathon/WhatsApp Image 2026-04-04 at 3.22.28 PM.jpeg', title: 'Idea Sprint', caption: 'Students pitching creative solutions under pressure.' },
-  { id: 'fm5', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Ivestiture-ceremony/WhatsApp Image 2026-04-04 at 2.53.30 PM.jpeg', title: 'Investiture', caption: 'Campus leaders taking charge with pride.' },
-  { id: 'fm6', url: '/uploads/gallery/FCIT-photo/FCIT-photo/Opeartion sindoor/WhatsApp Image 2026-04-04 at 2.57.13 PM.jpeg', title: 'Community Service', caption: 'A heartfelt outreach initiative from FCIT students.' },
-  { id: 'fm7', url: '/uploads/gallery/FCIT-photo/FCIT-photo/NSS/WhatsApp Image 2026-04-04 at 4.15.29 PM.jpeg', title: 'NSS Drive', caption: 'Service, solidarity, and campus impact in action.' },
-  { id: 'fm8', url: '/uploads/gallery/FCIT-photo/FCIT-photo/women_empowermentcell/WhatsApp Image 2026-04-04 at 4.58.05 PM.jpeg', title: 'Empowerment Rally', caption: 'Celebrating leadership, voice, and community strength.' },
-  { id: 'fm9', url: '/uploads/gallery/FCIT-photo/FCIT-photo/CASP/WhatsApp Image 2026-04-04 at 4.33.23 PM.jpeg', title: 'CASP Gathering', caption: 'Cross-school collaboration and engagement.' },
-  { id: 'fm10', url: '/uploads/gallery/FCIT-photo/FCIT-photo/faculty_corner/WhatsApp Image 2026-04-04 at 4.13.14 PM.jpeg', title: 'Faculty Forum', caption: 'Experts exchanging ideas in a candid moment.' },
-  { id: 'fm11', url: '/uploads/gallery/FCIT-photo/FCIT-photo/NSS/WhatsApp Image 2026-04-04 at 4.40.49 PM.jpeg', title: 'NSS Action', caption: 'Volunteers making a visible impact across campus.' },
-  { id: 'fm12', url: '/uploads/gallery/FCIT-photo/FCIT-photo/parents_meeting/WhatsApp Image 2026-04-04 at 4.42.35 PM (1).jpeg', title: 'Parent Engagement', caption: 'A thoughtful moment from our parent-student discussions.' },
+  { id: 'fm1', url: '/uploads/gallery/FCIT-photo/GMS-TRIP/WhatsApp Image 2026-04-04 at 2.55.41 PM (1).jpeg', title: 'GMS Trip', caption: 'A memorable learning journey outside the classroom.' },
+  { id: 'fm2', url: '/uploads/gallery/FCIT-photo/parents_meeting/WhatsApp Image 2026-04-04 at 4.40.40 PM (1).jpeg', title: 'Parent Meet', caption: 'Building stronger bonds with families and students.' },
+  { id: 'fm3', url: '/uploads/gallery/FCIT-photo/Tech-carnival-2k26/WhatsApp Image 2026-04-04 at 2.37.30 PM.jpeg', title: 'Carnival Energy', caption: 'Hands-on innovation and campus excitement.' },
+  { id: 'fm4', url: '/uploads/gallery/FCIT-photo/ideathon/WhatsApp Image 2026-04-04 at 3.22.28 PM.jpeg', title: 'Idea Sprint', caption: 'Students pitching creative solutions under pressure.' },
+  { id: 'fm5', url: '/uploads/gallery/FCIT-photo/Ivestiture-ceremony/WhatsApp Image 2026-04-04 at 2.53.30 PM.jpeg', title: 'Investiture', caption: 'Campus leaders taking charge with pride.' },
+  { id: 'fm6', url: '/uploads/gallery/FCIT-photo/Opeartion sindoor/WhatsApp Image 2026-04-04 at 2.57.13 PM.jpeg', title: 'Community Service', caption: 'A heartfelt outreach initiative from FCIT students.' },
+  { id: 'fm7', url: '/uploads/gallery/FCIT-photo/NSS/WhatsApp Image 2026-04-04 at 4.15.29 PM.jpeg', title: 'NSS Drive', caption: 'Service, solidarity, and campus impact in action.' },
+  { id: 'fm8', url: '/uploads/gallery/FCIT-photo/women_empowermentcell/WhatsApp Image 2026-04-04 at 4.58.05 PM.jpeg', title: 'Empowerment Rally', caption: 'Celebrating leadership, voice, and community strength.' },
+  { id: 'fm9', url: '/uploads/gallery/FCIT-photo/CASP/WhatsApp Image 2026-04-04 at 4.33.23 PM.jpeg', title: 'CASP Gathering', caption: 'Cross-school collaboration and engagement.' },
+  { id: 'fm10', url: '/uploads/gallery/FCIT-photo/faculty_corner/WhatsApp Image 2026-04-04 at 4.13.14 PM.jpeg', title: 'Faculty Forum', caption: 'Experts exchanging ideas in a candid moment.' },
+  { id: 'fm11', url: '/uploads/gallery/FCIT-photo/NSS/WhatsApp Image 2026-04-04 at 4.40.49 PM.jpeg', title: 'NSS Action', caption: 'Volunteers making a visible impact across campus.' },
+  { id: 'fm12', url: '/uploads/gallery/FCIT-photo/parents_meeting/WhatsApp Image 2026-04-04 at 4.42.35 PM (1).jpeg', title: 'Parent Engagement', caption: 'A thoughtful moment from our parent-student discussions.' },
 ];
 
 export default function Gallery() {
@@ -57,7 +57,7 @@ export default function Gallery() {
       <ParallaxHero
         title="Visual Journey"
         subtitle="Capturing the moments that define our vibrant community."
-        image="/uploads/gallery/FCIT-photo/FCIT-photo/Graduation day/WhatsApp Image 2026-04-04 at 5.17.05 PM.jpeg"
+        image="/uploads/gallery/FCIT-photo/Graduation day/WhatsApp Image 2026-04-04 at 5.17.05 PM.jpeg"
       />
 
       <div className="max-w-7xl mx-auto px-6 -mt-32 relative z-20">

@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { FileText, Download, Info, ArrowRight, Code, Monitor, ShieldCheck, Cloud, BarChart3 } from 'lucide-react';
+import { FileText, Download, Info, ArrowRight, Code, Monitor, ShieldCheck, Cloud, BarChart3, Mail, Phone, BookOpen, X } from 'lucide-react';
 import ParallaxHero from '@/components/ParallaxHero';
 import ClipPathCard from '@/components/ClipPathCard';
 import DownloadBrochureButton from '@/components/DownloadBrochureButton';
 import Modal from '@/components/Modal';
 import { SCHOOLS } from '@/constants';
-import { Course } from '@/types';
+import { Course, Leadership } from '@/types';
 
 function groupCourses(courses: Course[]) {
   return {
@@ -33,6 +33,7 @@ const CAREER_PATHS = [
 
 export default function Schools() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [selectedLeadership, setSelectedLeadership] = useState<Leadership | null>(null);
 
   return (
     <div className="pb-32">
@@ -52,6 +53,65 @@ export default function Schools() {
                 subtitle={school.shortName}
                 className="aspect-video"
               />
+              
+              {/* Leadership Section */}
+              {(school.director || school.hod) && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {school.director && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                      className="group cursor-pointer"
+                      onClick={() => setSelectedLeadership(school.director!)}
+                    >
+                      <div className="relative h-[320px] overflow-visible shadow-lg hover:shadow-xl transition-shadow" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 82%, 88% 100%, 0 100%)' }}>
+                        <img
+                          src={school.director.image}
+                          alt={school.director.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                          <div className="inline-block px-3 py-1 bg-brand-accent/90 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                            Director
+                          </div>
+                          <h4 className="text-xl font-bold mb-1">{school.director.name}</h4>
+                          <p className="text-sm text-gray-200">{school.director.designation}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                  
+                  {school.hod && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
+                      className="group cursor-pointer"
+                      onClick={() => setSelectedLeadership(school.hod!)}
+                    >
+                      <div className="relative h-[320px] overflow-visible shadow-lg hover:shadow-xl transition-shadow" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 82%, 88% 100%, 0 100%)' }}>
+                        <img
+                          src={school.hod.image}
+                          alt={school.hod.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                          <div className="inline-block px-3 py-1 bg-blue-500/90 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                            HOD
+                          </div>
+                          <h4 className="text-xl font-bold mb-1">{school.hod.name}</h4>
+                          <p className="text-sm text-gray-200">{school.hod.designation}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+              )}
               
               <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
                 <h3 className="text-3xl font-display font-bold mb-6">About {school.shortName}</h3>
@@ -277,6 +337,103 @@ export default function Schools() {
           </div>
         )}
       </Modal>
+
+      {/* Leadership Detail Modal */}
+      <AnimatePresence>
+        {selectedLeadership && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-brand-primary/95 backdrop-blur-2xl flex items-center justify-center p-6"
+            onClick={() => setSelectedLeadership(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="relative max-w-6xl w-full bg-white rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row"
+              onClick={e => e.stopPropagation()}
+            >
+              {/* Left Section: Photo */}
+              <div className="md:w-2/5 relative h-[400px] md:h-auto">
+                <img
+                  src={selectedLeadership.image}
+                  alt={selectedLeadership.name}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden" />
+                <div className="absolute bottom-6 left-6 text-white md:hidden">
+                  <h2 className="text-3xl font-display font-bold">{selectedLeadership.name}</h2>
+                  <p className="text-white/80">{selectedLeadership.designation}</p>
+                </div>
+              </div>
+
+              {/* Right Section: Details */}
+              <div className="md:w-3/5 p-8 md:p-16 overflow-y-auto max-h-[80vh]">
+                <div className="hidden md:block mb-10">
+                  <h2 className="text-5xl font-display font-bold mb-2">{selectedLeadership.name}</h2>
+                  <p className="text-xl text-brand-accent font-medium">{selectedLeadership.designation}</p>
+                </div>
+
+                <div className="space-y-10">
+                  <div>
+                    <h3 className="text-xl font-display font-bold mb-4 flex items-center gap-2">
+                      <BookOpen className="w-5 h-5 text-brand-accent" />
+                      Biography
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-lg">
+                      {selectedLeadership.bio}
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-xl font-display font-bold mb-4 flex items-center gap-2">
+                        <BookOpen className="w-5 h-5 text-brand-accent" />
+                        Expertise
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedLeadership.specialization.map(s => (
+                          <span key={s} className="px-4 py-2 bg-gray-100 text-gray-700 rounded-xl text-sm font-medium">
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-xl font-display font-bold mb-4 flex items-center gap-2">
+                        <Mail className="w-5 h-5 text-brand-accent" />
+                        Contact Info
+                      </h3>
+                      <div className="space-y-3">
+                        <a href={`mailto:${selectedLeadership.email}`} className="flex items-center gap-3 text-gray-600 hover:text-brand-accent transition-colors">
+                          <Mail className="w-5 h-5" />
+                          <span>{selectedLeadership.email}</span>
+                        </a>
+                        <a href={`tel:${selectedLeadership.phone}`} className="flex items-center gap-3 text-gray-600 hover:text-brand-accent transition-colors">
+                          <Phone className="w-5 h-5" />
+                          <span>{selectedLeadership.phone}</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                onClick={() => setSelectedLeadership(null)}
+                className="absolute top-8 right-8 p-3 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full transition-all"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

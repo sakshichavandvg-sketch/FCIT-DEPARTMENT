@@ -288,31 +288,34 @@ export default function Home() {
             viewport={{ once: true, amount: 0.3 }}
             className="bg-white p-14 rounded-[50px] shadow-2xl border border-gray-100"
           >
-            <span className="text-brand-accent font-bold uppercase tracking-[0.4em] text-xs">
-              A Message from the Dean
-            </span>
-            <motion.h2
-              variants={headingVariant}
-              className="text-5xl md:text-6xl font-sans font-semibold mt-6 tracking-[-0.04em] text-slate-950 leading-tight"
-            >
-              {deanHeading}
-            </motion.h2>
-            <p className="mt-4 text-lg font-sans font-semibold text-slate-700 max-w-2xl">
-              {deanAuthor}
-            </p>
-            <motion.p
-              variants={paragraphVariant}
-              className="mt-10 text-base sm:text-lg text-slate-700 leading-[1.75] font-sans font-normal max-w-3xl"
-            >
-              {deanMessage.map((segment, index) => (
-                <span
-                  key={index}
-                  className={segment.highlight ? 'font-semibold' : undefined}
-                >
-                  {segment.text}
-                </span>
-              ))}
-            </motion.p>
+            <span className="text-brand-accent font-sans uppercase tracking-[0.4em] text-xs">
+  A Message from the Dean
+</span>
+
+<motion.h2
+  variants={headingVariant}
+  className="text-5xl md:text-6xl font-display font-bold mt-6 tracking-tight text-slate-950 leading-tight"
+>
+  {deanHeading}
+</motion.h2>
+
+<p className="mt-4 text-lg font-sans text-slate-700 max-w-2xl">
+  {deanAuthor}
+</p>
+
+<motion.p
+  variants={paragraphVariant}
+  className="mt-10 text-base sm:text-lg text-slate-700 leading-[1.75] font-sans max-w-3xl"
+>
+  {deanMessage.map((segment, index) => (
+    <span
+      key={index}
+      className={segment.highlight ? 'font-semibold' : ''}
+    >
+      {segment.text}
+    </span>
+  ))}
+</motion.p>
           </motion.div>
         </div>
       </section>

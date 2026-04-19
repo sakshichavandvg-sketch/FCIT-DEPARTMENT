@@ -8,6 +8,17 @@ export interface Course {
   image: string;
 }
 
+export interface Leadership {
+  id: string;
+  name: string;
+  designation: string;
+  email: string;
+  phone: string;
+  image: string;
+  bio: string;
+  specialization: string[];
+}
+
 export interface School {
   id: string;
   name: string;
@@ -15,6 +26,8 @@ export interface School {
   description: string;
   courses: Course[];
   image: string;
+  director?: Leadership;
+  hod?: Leadership;
 }
 
 export interface GalleryImage {

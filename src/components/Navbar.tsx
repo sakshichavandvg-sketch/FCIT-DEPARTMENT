@@ -53,7 +53,7 @@ export default function Navbar() {
           <img
             src="/uploads/gallery/l1.png"
             alt="FCIT Department logo"
-            className="w-16 h-16 object-contain"
+            className="w-14 h-16 object-contain"
           />
           <span className="font-display font-semibold text-xl tracking-wide text-white drop-shadow-[0_0_10px_rgba(255,234,133,0.25)]">
   Faculty Of Computing and Information Technology
