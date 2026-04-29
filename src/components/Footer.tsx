@@ -12,8 +12,8 @@ export default function Footer() {
   alt="FCIT Logo"
   className="h-10 w-auto object-contain"
 />
-            <span className="font-display font-bold text-2xl tracking-tighter">
-              FCIT Department
+            <span className="font-serif font-bold text-2xl tracking-tighter">
+              FCIT
             </span>
           </Link>
           <p className="text-gray-400 text-sm leading-relaxed">

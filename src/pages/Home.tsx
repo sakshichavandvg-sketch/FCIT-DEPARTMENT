@@ -55,35 +55,19 @@ const MEMORY_JOURNEY = [
 const CORE_VALUES = [
   {
     title: 'Vision',
-    description: [
-      'To be a leading center of excellence in computing and information technology.',
-      'To foster innovation, research, and transformative learning.',
-      'To shape the digital future through quality education.'
-    ],
+    description: 'To be a leading center of excellence in computing and information technology.\n\nTo foster innovation, research, and transformative learning.\n\nTo shape the digital future through quality education.\n\nTo develop responsible leaders in the digital ecosystem.',
     icon: Eye,
     color: 'bg-blue-500',
   },
   {
     title: 'Mission',
-    description: [
-      'To disseminate knowledge and conduct research in computing and IT with a learner-centric approach.',
-      'To develop critical thinking, creativity, innovation, collaboration, and communication skills.',
-      'To enhance technical, digital literacy, flexibility, and adaptability.',
-      'To nurture cultural values, leadership, and responsibility.',
-      'To develop global citizens with emotional, social, environmental, and intellectual growth.'
-    ],
+    description: 'To disseminate knowledge and conduct research in computing and IT with a learner-centric approach.\n\nTo develop critical thinking, creativity, innovation, collaboration, and communication skills.\n\nTo enhance technical, digital literacy, flexibility, and adaptability.\n\nTo nurture cultural values, leadership, and responsibility.',
     icon: Target,
     color: 'bg-purple-500',
   },
   {
     title: 'Objectives',
-    description: [
-      'Impart comprehensive engineering education aligned with industry needs.',
-      'Promote research and development fostering innovation.',
-      'Encourage sustainable and ethical engineering practices.',
-      'Develop leadership qualities and lifelong learning habits.',
-      'Engage with community and industry for practical application.'
-    ],
+    description: 'Impart comprehensive engineering education aligned with industry needs.\n\nPromote research and development fostering innovation.\n\nEncourage sustainable and ethical engineering practices.\n\nDevelop leadership qualities and lifelong learning habits.',
     icon: Compass,
     color: 'bg-emerald-500',
   },
