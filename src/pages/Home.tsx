@@ -22,31 +22,52 @@ const ABOUT_IMAGES = [
 ];
 
 const MEMORY_JOURNEY = [
+   {
+    year: '2011-2015',
+    title: 'The Beginning of the Journey',
+    caption: 'New ideas flourished as the department expanded, shaping a strong academic and cultural foundation.',
+    mainImage: '/uploads/gallery/photo-1.jpg',
+    secondaryImages: ['/uploads/gallery/photo-2.jpg', '/uploads/gallery/photo-3.jpg'],
+  },
+  {
+    year: '2016-2018',
+    title: 'Building Momentum',
+    caption: 'New ideas flourished as the department expanded, shaping a strong academic and cultural foundation.',
+    mainImage: '/uploads/gallery/photo-1.jpg',
+    secondaryImages: ['/uploads/gallery/photo-2.jpg', '/uploads/gallery/photo-3.jpg'],
+  },
+  {
+    year: '2019-2022',
+    title: 'Innovation and Resilience',
+    caption: 'Challenges were met with determination, and innovation became the heartbeat of progress.',
+    mainImage: '/uploads/gallery/photo-1.jpg',
+    secondaryImages: ['/uploads/gallery/photo-2.jpg', '/uploads/gallery/photo-3.jpg'],
+  },
   {
     year: '2023',
-    title: 'The Beginning of the Journey',
-    caption: 'The first cohort arrived, and the campus began to pulse with possibility.',
+    title: 'A New Era of Growth',
+    caption: 'Fresh opportunities emerged, bringing renewed energy and a vision for the future.',
     mainImage: '/uploads/gallery/photo-1.jpg',
     secondaryImages: ['/uploads/gallery/photo-2.jpg', '/uploads/gallery/photo-3.jpg'],
   },
   {
     year: '2024',
-    title: 'Research Comes Alive',
-    caption: 'Early innovation sparks took root in labs, workshops, and student collaborations.',
+    title: 'Excellence in Motion',
+    caption: 'Achievements multiplied as students and faculty pushed boundaries and redefined success.',
     mainImage: '/uploads/gallery/photo-4.jpg',
     secondaryImages: ['/uploads/gallery/photo-5.jpg', '/uploads/gallery/photo-1.jpg'],
   },
   {
     year: '2025',
-    title: 'Community Momentum',
-    caption: 'The campus became a stage for events, shared stories, and meaningful connections.',
+    title: 'Shaping Tomorrow',
+    caption: 'With a legacy established, the journey continues toward a future filled with ambition and impact.',
     mainImage: '/uploads/gallery/photo-2.jpg',
     secondaryImages: ['/uploads/gallery/photo-3.jpg', '/uploads/gallery/photo-4.jpg'],
   },
   {
     year: '2026',
-    title: 'A Future in Focus',
-    caption: 'New leaders emerged, ready to carry the spirit of FCIT into tomorrow.',
+    title: 'Beyond Horizons',
+    caption: 'With vision turning into reality, the journey steps into a future defined by innovation, leadership, and global impact.',
     mainImage: '/uploads/gallery/photo-5.jpg',
     secondaryImages: ['/uploads/gallery/photo-1.jpg', '/uploads/gallery/photo-2.jpg'],
   },
@@ -252,7 +273,7 @@ export default function Home() {
 
       {/* Dean Message Section */}
       <section className="py-40 px-6">
-        <div className="max-w-7xl mx-auto grid gap-16 lg:grid-cols-[1.05fr_0.95fr] items-center">
+        <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-2 items-stretch">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -262,7 +283,7 @@ export default function Home() {
             <img
               src="/uploads/gallery/Dean.jpg"
               alt="Dean of FCIT"
-              className="w-full h-full min-h-[420px] object-cover"
+              className="w-full h-full object-cover"
             />
           </motion.div>
 
@@ -270,7 +291,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="bg-white p-14 rounded-[50px] shadow-2xl border border-gray-100"
+            className="bg-white p-12 rounded-[50px] shadow-2xl border border-gray-100 flex flex-col justify-center"
           >
             <span className="text-brand-accent font-sans uppercase tracking-[0.4em] text-xs">
   A Message from the Dean

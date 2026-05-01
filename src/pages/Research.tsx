@@ -93,18 +93,18 @@ export default function Research() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-10 bg-brand-accent rounded-[40px] text-white">
             <BookOpen className="w-12 h-12 mb-6 opacity-50" />
-            <h3 className="text-4xl font-display font-bold mb-2">150+</h3>
+            <h3 className="text-4xl font-display font-bold mb-2">42</h3>
             <p className="text-white/70 font-medium uppercase tracking-widest text-xs">Research Papers Published</p>
           </div>
           <div className="p-10 bg-brand-primary rounded-[40px] text-white">
             <Users className="w-12 h-12 mb-6 opacity-50" />
-            <h3 className="text-4xl font-display font-bold mb-2">45+</h3>
-            <p className="text-white/70 font-medium uppercase tracking-widest text-xs">Active Research Groups</p>
+            <h3 className="text-4xl font-display font-bold mb-2">14</h3>
+            <p className="text-white/70 font-medium uppercase tracking-widest text-xs">Faculty Contributors</p>
           </div>
           <div className="p-10 bg-gray-900 rounded-[40px] text-white">
             <Lightbulb className="w-12 h-12 mb-6 opacity-50" />
-            <h3 className="text-4xl font-display font-bold mb-2">$2.5M</h3>
-            <p className="text-white/70 font-medium uppercase tracking-widest text-xs">Research Grants Secured</p>
+            <h3 className="text-4xl font-display font-bold mb-2">2024-25</h3>
+            <p className="text-white/70 font-medium uppercase tracking-widest text-xs">Active Research Period</p>
           </div>
         </div>
       </section>

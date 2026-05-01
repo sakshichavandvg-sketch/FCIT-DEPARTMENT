@@ -14,7 +14,7 @@ export default function Faculty() {
       <ParallaxHero
         title="Our Faculty"
         subtitle="Meet the visionary educators and researchers shaping the future of FCIT."
-        image="/uploads/gallery/Faculty.jpeg"
+        image="/uploads/gallery/Faculty.png"
       />
 
       <section className="max-w-7xl mx-auto px-6 -mt-20 relative z-20">
