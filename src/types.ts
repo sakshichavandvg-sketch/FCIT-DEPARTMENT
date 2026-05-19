@@ -48,6 +48,7 @@ export interface Project {
   date: string;
   tags: string[];
   downloadUrl?: string;
+  mentor?: string;
 }
 
 export interface Faculty {

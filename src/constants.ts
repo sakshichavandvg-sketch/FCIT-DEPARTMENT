@@ -68,7 +68,7 @@ export const SCHOOLS: School[] = [
       { id: 'msc-cs', name: 'M.Sc in Computer Science', description: 'A 2-year postgraduate program focusing on advanced computing theory and research.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/Program BCA.pdf', image: '/uploads/gallery/mca.png' },
       { id: 'msc-cyber', name: 'M.Sc in Cybersecurity', description: 'A 2-year postgraduate program focused on cybersecurity research and practice.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/Program Document - M.Sc.- Cyber Security26.pdf', image: '/uploads/gallery/mcy.png' },
       { id: 'msc-ai', name: 'M.Sc in AI & Data Analytics', description: 'A 2-year postgraduate program centered on artificial intelligence and data analytics.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/Program Document-M.Sc-AI & DA26.pdf', image: '/uploads/gallery/mds.png' },
-       { id: 'msc-data', name: 'M.Sc in Data Science', description: 'A 2-year postgraduate program centered on data science.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/Program Document-M.Sc-DS26.pdf', image: '/uploads/gallery/mds.png' },
+      { id: 'msc-data', name: 'M.Sc in Data Science', description: 'A 2-year postgraduate program centered on data science.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/Program Document-M.Sc-DS26.pdf', image: '/uploads/gallery/mds.png' },
     ]
   }
 ];
@@ -138,7 +138,7 @@ export const PROJECTS: Project[] = [
     author: 'Mr. Rajashekhar G C',
     type: 'Research',
     description: 'Comprehensive analysis of security vulnerabilities in IoT devices with proposed mitigation strategies.',
-    image:'uploads/gallery/p5.png',
+    image: 'uploads/gallery/p5.png',
     date: '2024-09-01',
     tags: ['IoT Security', 'Cybersecurity', 'Vulnerability Analysis'],
     downloadUrl: '#'
@@ -369,6 +369,470 @@ export const PROJECTS: Project[] = [
     date: '2025-05-01',
     tags: ['Deep Learning', 'NLP', 'Business Intelligence', 'Sentiment Analysis'],
     downloadUrl: '#'
+  },
+  // Student Projects
+  {
+    id: 'sp1',
+    title: 'Agronomist Real Estate App',
+    author: 'Darshan HS, Nikhil Desai, Pradeep KH',
+    type: 'Student Project',
+    description: 'The Agri Real Estate App is an Android-based application designed to provide a centralized digital platform that connects agricultural land owners with users in a secure and efficient environment. This project aims to simplify and modernize the agricultural land transaction process.',
+    image: 'uploads/gallery/s1.png',
+    date: '2026-01-01',
+    tags: ['Mobile App', 'Android', 'Real Estate', 'Agriculture'],
+    mentor: 'Kantesh M'
+  },
+  {
+    id: 'sp2',
+    title: 'AI Enabled Skin Classification and Customised Product Recommendation',
+    author: 'Vidya U Mudigoudar, Ananya SS, Swathi C L',
+    type: 'Student Project',
+    description: 'A web-based platform that analyzes skin characteristics and recommends personalized skincare products using artificial intelligence. The system helps users understand their skin better and choose products that match their specific needs.',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Web Development', 'AI', 'Python', 'VIT', 'CNN'],
+    mentor: 'Sugandha MS'
+  },
+  {
+    id: 'sp3',
+    title: 'Placement Cell',
+    author: 'Harish D, Adarsh H, Vivek N Ritti',
+    type: 'Student Project',
+    description: 'A web application designed to streamline the recruitment process within educational institutions. It provides a platform where students can register, upload resumes, and apply for job opportunities while administrators manage company details and track placement statistics.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Web Development', 'Python', 'Placement', 'Student Platform'],
+    mentor: 'Rajashekhar G C'
+  },
+  {
+    id: 'sp4',
+    title: 'Fake News Detection',
+    author: 'Shalini SP, Varshitha J, Basavashre Poojar',
+    type: 'Student Project',
+    description: 'A machine learning project to detect fake news scenarios related to COVID-19. The system focuses on identifying misinformation in digital media using Python and machine learning algorithms to ensure users have access to verified information.',
+    image: 'uploads/gallery/s4.png',
+    date: '2026-01-01',
+    tags: ['Python', 'Machine Learning', 'AI', 'Misinformation Detection'],
+    mentor: 'Suhasini'
+  },
+  {
+    id: 'sp5',
+    title: 'An Integrated AI Model for COVID-19 News Credibility Assessment',
+    author: 'Varshitha J, Shalini SP, Basavashree Poojar S',
+    type: 'Student Project',
+    description: 'An AI-powered system that detects fake news based on COVID-19 information spread through social media. The project uses machine learning techniques to identify whether news is fake or real and solve the problem of misinformation spread.',
+    image: 'uploads/gallery/s5.png',
+    date: '2026-01-01',
+    tags: ['AI', 'Python', 'Machine Learning', 'Fake News Detection'],
+    mentor: 'Suhasini'
+  },
+  {
+    id: 'sp6',
+    title: 'First Assistant and Hospital Finder App',
+    author: 'Barkha Bahar, Keerthi V R, Jyothi S Sarode',
+    type: 'Student Project',
+    description: 'A mobile application that helps users respond quickly during medical emergencies by providing simple first aid instructions and locating nearby hospitals using GPS. It offers step-by-step guidance and real-time directions to healthcare facilities.',
+    image: 'uploads/gallery/s6.png',
+    date: '2026-01-01',
+    tags: ['Mobile App', 'Healthcare', 'Python', 'First Aid', 'GPS'],
+    mentor: 'Kavya G'
+  },
+  {
+    id: 'sp7',
+    title: 'Bridge Between Investors & Business People App',
+    author: 'Subodha L Desai, Pavan Kumar Hiremath, Manoj Kumar Guggalashetty',
+    type: 'Student Project',
+    description: 'The Invest Bridge application, developed using Flutter, connects entrepreneurs with suitable investors. It provides a centralized and secure platform where both parties can discover and interact with each other, reducing time and communication gaps.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Mobile App', 'Flutter', 'Python', 'MySQL', 'Investment', 'Startup'],
+    mentor: 'Sumanth M B'
+  },
+  {
+    id: 'sp8',
+    title: 'Crop Disease Detection',
+    author: 'Misbah Kouser, Nazneen Banu, Amra Ali Khanum',
+    type: 'Student Project',
+    description: 'A web-based system that detects diseases in rice and chili plant leaves using deep learning techniques. Users can upload images of plant leaves and get instant disease predictions using CNN and Vision Transformer models.',
+    image: 'uploads/gallery/p2.png',
+    date: '2026-01-01',
+    tags: ['AI-ML', 'Python', 'VIT', 'CNN', 'Agriculture', 'Deep Learning'],
+    mentor: 'Sugandha MS'
+  },
+  {
+    id: 'sp9',
+    title: 'Career Compass',
+    author: 'Mohammed Faizan, Shayan Ahmed, Ghouse Mohiddin',
+    type: 'Student Project',
+    description: 'A comprehensive web application designed to bridge the gap between job seekers and employers. It features a robust job search engine with advanced filtering, personalized career recommendations, and an intuitive dashboard for managing applications.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Web Development', 'Python', 'Django', 'HTML', 'CSS', 'JavaScript', 'SQL', 'Job Platform'],
+    mentor: 'Sumanth M B'
+  },
+  {
+    id: 'sp10',
+    title: 'Voice-Based Email System for the Visually Impaired',
+    author: 'Varshini G, Sahana K S, Suhana Bhanu',
+    type: 'Student Project',
+    description: 'A Voice-Based Email System that allows visually impaired individuals to send, read, and manage emails through voice commands. The system leverages Speech-to-Text and Text-to-Speech technologies for a hands-free experience.',
+    image: 'uploads/gallery/p5.png',
+    date: '2026-01-01',
+    tags: ['AI-ML', 'Python', 'Accessibility', 'Voice Recognition', 'Speech Technology'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp11',
+    title: 'Smart Attendance System using Face Recognition',
+    author: 'Sushma G P, Priyanka S M, Ashwini K M',
+    type: 'Student Project',
+    description: 'An automated attendance system using face recognition that tracks attendance through a camera. The system compares captured images against a database using advanced facial recognition algorithms and logs attendance in real-time.',
+    image: 'uploads/gallery/p3.png',
+    date: '2026-01-01',
+    tags: ['AI-ML', 'Python', 'OpenCV', 'Flask', 'MySQL', 'Face Recognition'],
+    mentor: 'Prof. Sumanth M B'
+  },
+  {
+    id: 'sp12',
+    title: 'Smart Farming System using IoT',
+    author: 'Prajwal M, Ranganath S, Rahul B S',
+    type: 'Student Project',
+    description: 'An IoT-based system designed to optimize agricultural practices by monitoring environmental conditions in real-time. It tracks soil moisture, temperature, and humidity to provide farmers with actionable data for improving crop yield.',
+    image: 'uploads/gallery/s1.png',
+    date: '2026-01-01',
+    tags: ['IoT', 'Python', 'Arduino', 'Raspberry Pi', 'Firebase', 'Smart Agriculture'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp13',
+    title: 'Real-Time Sign Language Recognition System',
+    author: 'Karthik S, Manjunath K, Naveen P',
+    type: 'Student Project',
+    description: 'A real-time sign language recognition system that translates hand gestures into text and speech instantly. Using deep learning models, the system identifies corresponding letters or words from live gesture detection.',
+    image: 'uploads/gallery/s13.png',
+    date: '2026-01-01',
+    tags: ['AI-ML', 'Python', 'TensorFlow', 'OpenCV', 'MediaPipe', 'Gesture Recognition'],
+    mentor: 'Sumanth M B'
+  },
+  {
+    id: 'sp14',
+    title: 'Virtual Home Interior Designer',
+    author: 'Bhoomika G J, Madhushree M, Deepthi S M',
+    type: 'Student Project',
+    description: 'A web-based platform that uses AI and augmented reality to help users design their living spaces. Users can upload photos of rooms and virtually place furniture items, paint colors, and flooring options.',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['AI', 'Web Development', 'Python', 'Django', 'Three.js', 'MySQL', 'Design'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp15',
+    title: 'Personal Portfolio Website',
+    author: 'Shushmitha M S, G S Manasa, Priyanka K',
+    type: 'Student Project',
+    description: 'A personal portfolio website that showcases individual skills, projects, and achievements. Designed as a comprehensive digital resume with an About Me section, project gallery, and functional contact form.',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Web Development', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Portfolio'],
+    mentor: 'Suhasini K'
+  },
+  {
+    id: 'sp16',
+    title: 'E-Commerce Platform for Local Artisans',
+    author: 'Santhosh G, Vijay K, Ajay M',
+    type: 'Student Project',
+    description: 'An e-commerce platform specifically designed for local craftsmen and small-scale producers. It allows artisans to create digital storefronts, upload product images, and manage orders efficiently with secure authentication and payment gateway.',
+    image: 'uploads/gallery/p3.png',
+    date: '2026-01-01',
+    tags: ['Web Development', 'Python', 'Django', 'SQLite', 'Bootstrap', 'E-Commerce'],
+    mentor: 'Sumanth M B'
+  },
+  {
+    id: 'sp17',
+    title: 'Smart Parking Management System',
+    author: 'Praveen B, Darshan H, Chetan S',
+    type: 'Student Project',
+    description: 'An IoT and sensor-based system that provides real-time updates on parking availability in urban areas. Sensors detect vehicle presence and send data to a central server for users to access via web or mobile application.',
+    image: 'uploads/gallery/p11.png',
+    date: '2026-01-01',
+    tags: ['IoT', 'Python', 'Raspberry Pi', 'MySQL', 'Smart City', 'Parking'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp18',
+    title: 'Student Information Management System',
+    author: 'Amrutha R, Archana M N, Bhoomika G S',
+    type: 'Student Project',
+    description: 'A digital platform to store, manage, and retrieve student information efficiently. It replaces manual record-keeping methods with features including adding new student details, updating records, and quick search functionality.',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Other', 'Python', 'Tkinter', 'MySQL', 'Database', 'Student Records'],
+    mentor: 'Prof. Sugandha M S'
+  },
+  {
+    id: 'sp19',
+    title: 'Credit Card Fraud Detection',
+    author: 'Manohara K, Karthik S, Chandrashekara S R',
+    type: 'Student Project',
+    description: 'A machine learning project that detects fraudulent transactions in real-time by analyzing patterns in transaction data. The model identifies anomalies that suggest fraud using Logistic Regression and other algorithms.',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['AI-ML', 'Python', 'Scikit-learn', 'Pandas', 'Fraud Detection', 'Finance'],
+    mentor: 'Kavya G'
+  },
+  {
+    id: 'sp20',
+    title: 'Automated Essay Scoring System',
+    author: 'Pallavi G S, Pooja M, Priyanka K R',
+    type: 'Student Project',
+    description: 'A system that uses Natural Language Processing to evaluate and score student essays automatically. It analyzes grammar, vocabulary, coherence, and relevance to provide automated grading and feedback to students.',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['AI-ML', 'Python', 'NLTK', 'Scikit-learn', 'NLP', 'Education'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp21',
+    title: 'Plant Disease Detection using Image Processing',
+    author: 'Madhumitha S, Pallavi C, Lavanya B',
+    type: 'Student Project',
+    description: 'An image processing and machine learning project that helps farmers identify plant diseases early. Users can upload images of infected plant leaves and get disease diagnosis based on visual symptom analysis.',
+    image: 'uploads/gallery/p15.png',
+    date: '2026-01-01',
+    tags: ['AI-ML', 'Python', 'OpenCV', 'TensorFlow', 'Agriculture', 'Image Processing'],
+    mentor: 'Sumanth M B'
+  },
+  {
+    id: 'sp22',
+    title: 'Hospital Management System',
+    author: 'Shashi Kumar K V, Santhosh Kumar B R, Darshan S',
+    type: 'Student Project',
+    description: 'A comprehensive system to digitize hospital operations including patient registration, doctor scheduling, and billing. Features include record management, search functionality, and user-friendly interface for operational efficiency.',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Other', 'Python', 'Tkinter', 'MySQL', 'Healthcare', 'Management'],
+    mentor: 'Sumanth M B'
+  },
+  {
+    id: 'sp23',
+    title: 'Stock Price Prediction',
+    author: 'Shivaraj K, Naveen Kumar M, Rahul G',
+    type: 'Student Project',
+    description: 'A machine learning project that predicts future stock prices based on historical data. It provides data visualization, trend analysis, and price forecasting to help investors make data-driven investment decisions.',
+    image: 'uploads/gallery/s23.png',
+    date: '2026-01-01',
+    tags: ['AI-ML', 'Python', 'Pandas', 'Matplotlib', 'Scikit-learn', 'Finance'],
+    mentor: 'Kavya G'
+  },
+  {
+    id: 'sp24',
+    title: 'Voice Assistant for PC',
+    author: 'Manoj S, Karthik R, Abhishek M',
+    type: 'Student Project',
+    description: 'A PC application that performs tasks based on voice commands including opening applications, searching the web, and playing music. Features speech recognition, natural language processing, and system task automation.',
+    image: 'uploads/gallery/p21.png',
+    date: '2026-01-01',
+    tags: ['AI', 'Python', 'Pyttsx3', 'SpeechRecognition', 'Voice Control'],
+    mentor: 'Suhasini K'
+  },
+  {
+    id: 'sp25',
+    title: 'Online Quiz System',
+    author: 'Deepa M, Kavya S, Megha R',
+    type: 'Student Project',
+    description: 'A web-based platform that allows teachers to create quizzes and students to take them online. Features include user authentication, quiz management, automated scoring, and result display for efficient examination process.',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Web Development', 'HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'Education'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp26',
+    title: 'Weather Forecasting App',
+    author: 'Ranjitha K, Shwetha M, Sahana G',
+    type: 'Student Project',
+    description: 'A web application that provides real-time weather information for different locations. Users can search for cities and get details like temperature, humidity, and wind speed with API integration and responsive interface.',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Web Development', 'HTML', 'CSS', 'JavaScript', 'OpenWeatherMap API', 'Weather'],
+    mentor: 'Kavya G'
+  },
+  {
+    id: 'sp27',
+    title: 'Chatbot for Customer Support',
+    author: 'Bharath K, Goutham S, Harish M',
+    type: 'Student Project',
+    description: 'A chatbot that automates responses to frequently asked questions using NLP to understand user queries. Features include intent recognition, automated replies, and chat interface for improving customer service efficiency.',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['AI', 'Python', 'NLTK', 'Flask', 'NLP', 'Customer Support'],
+    mentor: 'Suhasini K'
+  },
+  {
+    id: 'sp28',
+    title: 'Recipe Recommendation System',
+    author: 'Kavana S, Kusuma R, Pooja G',
+    type: 'Student Project',
+    description: 'A web-based system that suggests recipes based on available ingredients. Users can enter ingredients they have and receive a list of possible dishes with recipe details and cooking instructions.',
+    image: 'uploads/gallery/s28.png',
+    date: '2026-01-01',
+    tags: ['Web Development', 'HTML', 'CSS', 'JavaScript', 'Python', 'Recipe'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp29',
+    title: 'Library Management System',
+    author: 'Manisha S M, Meghana R S, Anusha B S',
+    type: 'Student Project',
+    description: 'A digital tool that simplifies the management of books and their distribution in libraries. Features include adding new books, tracking issued books, and managing member records with organized database.',
+    image: 'uploads/gallery/s29.png',
+    date: '2026-01-01',
+    tags: ['Other', 'Python', 'Tkinter', 'MySQL', 'Library', 'Management'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp30',
+    title: 'Blood Bank Management System',
+    author: 'Sharan Kumar, Vinay Kumar, Rohan S',
+    type: 'Student Project',
+    description: 'A system that manages blood donor records and blood availability in blood banks. Features include donor registration, blood stock tracking, and search functionality for urgent requirements during emergencies.',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Other', 'Python', 'Tkinter', 'MySQL', 'Healthcare', 'Blood Bank'],
+    mentor: 'Suhasini K'
+  }
+  ,
+  {
+    id: 'sp31',
+    title: 'Vehicle Rental System',
+    author: 'Abhishek S, Akash M, Goutham R',
+    type: 'Student Project',
+    description: 'An online platform for renting vehicles like cars and bikes. Features include vehicle listings, user registration, booking management, and a payment interface for customers and rental businesses.',
+    image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Web Development', 'HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+    mentor: 'Kavya G'
+  },
+  {
+    id: 'sp32',
+    title: 'Expense Tracker',
+    author: 'Anjali K, Bhavya S, Divya M',
+    type: 'Student Project',
+    description: 'A mobile application for tracking daily expenses with expense logging, category management, and visualizations to help users manage personal finances and budgeting.',
+    image: 'uploads/gallery/s32.png',
+    date: '2026-01-01',
+    tags: ['Mobile App', 'Flutter', 'Firebase', 'Finance'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp33',
+    title: 'Pharmacy Management System',
+    author: 'Harshith K, Jeevan S, Lohith M',
+    type: 'Student Project',
+    description: 'A system to manage medicine inventory and sales in a pharmacy, including stock management, billing, and medicine search to ensure accurate stock tracking and efficient billing.',
+    image: 'uploads/gallery/s33.png',
+    date: '2026-01-01',
+    tags: ['Other', 'Python', 'Tkinter', 'MySQL', 'Inventory'],
+    mentor: 'Sumanth M B'
+  },
+  {
+    id: 'sp34',
+    title: 'Music Player Application',
+    author: 'Madan K, Nithin S, Rahul R',
+    type: 'Student Project',
+    description: 'A mobile music player app allowing users to play and manage their music library with playlists, playback controls, and a user-friendly interface.',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Mobile App', 'Java (Android)', 'XML', 'Media'],
+    mentor: 'Suhasini K'
+  },
+  {
+    id: 'sp35',
+    title: 'Gym Management System',
+    author: 'Puneeth K, Sachin S, Varun M',
+    type: 'Student Project',
+    description: 'A system to manage gym memberships and trainer schedules including member registration, attendance tracking, and fee management for gym owners and fitness centers.',
+    image: 'uploads/gallery/s35.png',
+    date: '2026-01-01',
+    tags: ['Other', 'Python', 'Tkinter', 'MySQL', 'Management'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp36',
+    title: 'Event Management System',
+    author: 'Rakshitha K, Sahana M, Tejaswini S',
+    type: 'Student Project',
+    description: 'A web platform for organizing and managing events with event creation, attendee registration, and scheduling features for event planners and organizations.',
+    image: 'https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Web Development', 'HTML', 'CSS', 'JavaScript', 'Django'],
+    mentor: 'Kavya G'
+  },
+  {
+    id: 'sp37',
+    title: 'Personal Diary Application',
+    author: 'Sneha K, Swathi S, Vidya M',
+    type: 'Student Project',
+    description: 'A secure personal diary mobile app for writing and saving daily entries with search and password protection for private journaling.',
+    image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Mobile App', 'Flutter', 'SQLite', 'Diary'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp38',
+    title: 'Airline Reservation System',
+    author: 'Ullas K, Vishwas S, Yashas M',
+    type: 'Student Project',
+    description: 'A web-based airline reservation system for searching flights and booking tickets with seat selection and user authentication.',
+    image: 'uploads/gallery/s38.png',
+    date: '2026-01-01',
+    tags: ['Web Development', 'Java (Servlets)', 'HTML', 'CSS', 'JavaScript', 'MySQL'],
+    mentor: 'Suhasini K'
+  },
+  {
+    id: 'sp39',
+    title: 'Inventory Management System',
+    author: 'Swathi R M, Soumya M M, Deepa S',
+    type: 'Student Project',
+    description: 'An inventory management system to track stock, manage incoming/outgoing products and generate reports, simplifying warehouse/store inventory operations.',
+    image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Web Development', 'Python', 'MySQL', 'Inventory'],
+    mentor: 'Kavya G'
+  },
+  {
+    id: 'sp40',
+    title: 'AI-Based Leaf Nutrition Deficiency Detection',
+    author: 'Jessica R, Shreevaibhavi K G, Mukthashree J V',
+    type: 'Student Project',
+    description: 'A system to detect nutrient deficiencies in plant leaves using AI and image processing; users upload leaf images and the model predicts nutrient deficiency types.',
+    image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Web Development', 'Python', 'TensorFlow', 'MobileNetV2', 'Image Processing'],
+    mentor: 'Sugandha M S'
+  },
+  {
+    id: 'sp41',
+    title: 'Labour Link',
+    author: 'Tanoj S D, Abhishek J B, Jeevan K H',
+    type: 'Student Project',
+    description: 'A mobile app connecting users with verified skilled construction workers, offering profiles, ratings, booking, and secure communication for the unorganized labour market.',
+    image: 'uploads/gallery/s41.png',
+    date: '2026-01-01',
+    tags: ['Mobile App', 'Android', 'Workforce', 'Services'],
+    mentor: 'Sahana K E'
+  },
+  {
+    id: 'sp42',
+    title: 'Web based Computer Lab Management System',
+    author: 'Chinmayi Urs M, Soumya Irappa Kusanur, Harshita M S',
+    type: 'Student Project',
+    description: 'A website-based system to manage computer labs, automating task tracking and resource allocation with centralized online data storage for administrators and students.',
+    image: 'https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&q=80&w=800',
+    date: '2026-01-01',
+    tags: ['Web Development', 'Python', 'MySQL', 'Lab Management'],
+    mentor: 'Mrs. Teja H'
   }
 ];
 
@@ -435,7 +899,7 @@ export const FACULTY: Faculty[] = [
     department: 'Faculty of Computing and IT',
     email: 'tejah.fcit.sca@gmu.ac.in',
     phone: '+91 XXXXXXX',
-    image: '/uploads/gallery/Teja H.jpeg',
+    image: '/uploads/gallery/teja.jpg',
     bio: 'Asst. Professor Teja H specializes in Artificial Intelligence, Cloud Computing, and Python programming. With 2 years of teaching experience, she possesses strong knowledge and expertise in research and teaching within these domains. Her expertise is focused on applying computational methods and emerging technologies to solve real-world challenges.',
     specialization: ['Artificial Intelligence', 'Cloud Computing', 'Big Data Analytics', 'Python Programming']
   },
@@ -479,7 +943,7 @@ export const FACULTY: Faculty[] = [
     department: 'School of Computer Applications',
     email: 'anuvb.fcit.sca@gmu.ac.in',
     phone: '+91 XXXXXXX',
-    image: '/uploads/gallery/Anu V.B.jpeg',
+    image: '/uploads/gallery/Anu.png',
     bio: 'Ms. Anu V.B is an Assistant Professor in the School of Computer Applications at GM University. She holds an MCA degree, with over 7.9 years of teaching experience. She has developed strong expertise in Database Management Systems, Cyber Security, Java, and Artificial Intelligence and Machine Learning.',
     specialization: ['Artificial Intelligence', 'Machine Learning', 'Database Management System', 'Cyber Security', 'Java']
   },
@@ -559,5 +1023,27 @@ export const FACULTY: Faculty[] = [
     image: '/uploads/gallery/shamina.jpeg',
     bio: 'Ms. Shamina M. Attar is the Director of the School of Computer Science, FCIT, GM University Davanagere. She holds an MCA and is pursuing a PhD. With over 8 years of teaching experience, 2 years of research involvement, and 2 years of industry experience, she brings a well-rounded academic and professional background. Her areas of expertise include Full Stack Development, Artificial Intelligence, and Machine Learning. She is committed to fostering innovative research and delivering high-quality education to students.',
     specialization: ['Full Stack Development', 'Artificial Intelligence', 'Machine Learning']
+  },
+  {
+    id: 'f18',
+    name: 'Ms. SUSHMITHA .M',
+    designation: 'Assistant Professor',
+    department: 'School of Computer Applictions',
+    email: 'sushmitham@gmu.ac.in',
+    phone: '+1 234 567 890',
+    image: '/uploads/gallery/Susmitha.png',
+    bio: 'Asst. Professor. SUSHMITHA .M specializes in Java , She possesses strong knowledge and experience in research and teaching within these domains. Her expertise is focused on applying computational methods and emerging technologies to solve real-world challenges.',
+    specialization: ['Core Java', 'Software Engineering', 'SQL']
+  },
+  {
+    id: 'f19',
+    name: 'Prof. Keerthana G V',
+    designation: 'Assistant Professor',
+    department: 'School of Computer Applictions',
+    email: 'Keerthanagv.fcit.scs@gmu.ac.in',
+    phone: '+91 8970531153',
+    image: '/uploads/gallery/Keerthana.jpg',
+    bio: 'Prof. Keerthana has extensive experience in AI, Machine Learning and Image Processing.',
+    specialization: ['Artificial Intelligence', 'Machine Learning', 'AndroidApp Development', 'Computer Vision', 'Image Processing', 'Research in AI-based Application']
   }
 ];

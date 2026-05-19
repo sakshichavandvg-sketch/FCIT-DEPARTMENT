@@ -9,7 +9,7 @@ import ImageSlider from '@/components/ImageSlider';
 const STATS = [
   { label: 'Students', value: 700, suffix: '+', icon: Users },
   { label: 'Faculty', value: 20, suffix: '+', icon: GraduationCap },
-  { label: 'Research Papers', value: 5, suffix: '+', icon: BookOpen },
+  { label: 'Research Papers', value: 50, suffix: '+', icon: BookOpen },
   { label: 'Awards', value: 50, suffix: '+', icon: Trophy },
 ];
 
@@ -22,54 +22,75 @@ const ABOUT_IMAGES = [
 ];
 
 const MEMORY_JOURNEY = [
-   {
+  {
     year: '2011-2015',
     title: 'The Beginning of the Journey',
     caption: 'New ideas flourished as the department expanded, shaping a strong academic and cultural foundation.',
-    mainImage: '/uploads/gallery/photo-1.jpg',
-    secondaryImages: ['/uploads/gallery/photo-2.jpg', '/uploads/gallery/photo-3.jpg'],
+    mainImage: '/uploads/gallery/FCIT-photo/Orientation program/WhatsApp Image 2026-04-04 at 3.08.43 PM.jpeg',
+    secondaryImages: [
+      '/uploads/gallery/FCIT-photo/Orientation program/WhatsApp Image 2026-04-04 at 3.08.44 PM.jpeg',
+      '/uploads/gallery/FCIT-photo/faculty_corner/WhatsApp Image 2026-04-04 at 4.12.05 PM.jpeg'
+    ],
   },
   {
     year: '2016-2018',
     title: 'Building Momentum',
-    caption: 'New ideas flourished as the department expanded, shaping a strong academic and cultural foundation.',
-    mainImage: '/uploads/gallery/photo-1.jpg',
-    secondaryImages: ['/uploads/gallery/photo-2.jpg', '/uploads/gallery/photo-3.jpg'],
+    caption: 'Hands-on workshops and collaborative projects helped shape practical skills and industry ties.',
+    mainImage: '/uploads/gallery/FCIT-photo/workshops/WhatsApp Image 2026-04-04 at 3.50.04 PM.jpeg',
+    secondaryImages: [
+      '/uploads/gallery/FCIT-photo/workshops/WhatsApp Image 2026-04-04 at 3.50.20 PM.jpeg',
+      '/uploads/gallery/FCIT-photo/ideathon/WhatsApp Image 2026-04-04 at 3.22.27 PM.jpeg'
+    ],
   },
   {
     year: '2019-2022',
     title: 'Innovation and Resilience',
     caption: 'Challenges were met with determination, and innovation became the heartbeat of progress.',
-    mainImage: '/uploads/gallery/photo-1.jpg',
-    secondaryImages: ['/uploads/gallery/photo-2.jpg', '/uploads/gallery/photo-3.jpg'],
+    mainImage: '/uploads/gallery/FCIT-photo/Graduation day/WhatsApp Image 2026-04-04 at 5.17.05 PM.jpeg',
+    secondaryImages: [
+      '/uploads/gallery/FCIT-photo/NSS/WhatsApp Image 2026-04-04 at 4.15.29 PM.jpeg',
+      '/uploads/gallery/FCIT-photo/student_corner/WhatsApp Image 2026-04-04 at 5.10.16 PM.jpeg'
+    ],
   },
   {
     year: '2023',
     title: 'A New Era of Growth',
     caption: 'Fresh opportunities emerged, bringing renewed energy and a vision for the future.',
-    mainImage: '/uploads/gallery/photo-1.jpg',
-    secondaryImages: ['/uploads/gallery/photo-2.jpg', '/uploads/gallery/photo-3.jpg'],
+    mainImage: '/uploads/gallery/FCIT-photo/student_corner/WhatsApp Image 2026-04-04 at 5.10.17 PM.jpeg',
+    secondaryImages: [
+      '/uploads/gallery/FCIT-photo/student_corner/WhatsApp Image 2026-04-04 at 5.11.19 PM.jpeg',
+      '/uploads/gallery/FCIT-photo/faculty_corner/WhatsApp Image 2026-04-04 at 5.11.18 PM.jpeg'
+    ],
   },
   {
     year: '2024',
     title: 'Excellence in Motion',
     caption: 'Achievements multiplied as students and faculty pushed boundaries and redefined success.',
-    mainImage: '/uploads/gallery/photo-4.jpg',
-    secondaryImages: ['/uploads/gallery/photo-5.jpg', '/uploads/gallery/photo-1.jpg'],
+    mainImage: '/uploads/gallery/FCIT-photo/women_empowermentcell/WhatsApp Image 2026-04-04 at 4.58.04 PM.jpeg',
+    secondaryImages: [
+      '/uploads/gallery/FCIT-photo/sports events/WhatsApp Image 2026-04-04 at 3.17.50 PM.jpeg',
+      '/uploads/gallery/FCIT-photo/parents_meeting/WhatsApp Image 2026-04-04 at 4.40.40 PM.jpeg'
+    ],
   },
   {
     year: '2025',
     title: 'Shaping Tomorrow',
     caption: 'With a legacy established, the journey continues toward a future filled with ambition and impact.',
-    mainImage: '/uploads/gallery/photo-2.jpg',
-    secondaryImages: ['/uploads/gallery/photo-3.jpg', '/uploads/gallery/photo-4.jpg'],
+    mainImage: '/uploads/gallery/FCIT-photo/conference_2k25/WhatsApp Image 2026-04-04 at 3.58.10 PM.jpeg',
+    secondaryImages: [
+      '/uploads/gallery/FCIT-photo/conference_2k25/WhatsApp Image 2026-04-04 at 3.59.50 PM.jpeg',
+      '/uploads/gallery/FCIT-photo/GMS-TRIP/WhatsApp Image 2026-04-04 at 2.55.41 PM.jpeg'
+    ],
   },
   {
     year: '2026',
     title: 'Beyond Horizons',
     caption: 'With vision turning into reality, the journey steps into a future defined by innovation, leadership, and global impact.',
-    mainImage: '/uploads/gallery/photo-5.jpg',
-    secondaryImages: ['/uploads/gallery/photo-1.jpg', '/uploads/gallery/photo-2.jpg'],
+    mainImage: '/uploads/gallery/FCIT-photo/Tech-carnival-2k26/WhatsApp Image 2026-04-04 at 2.37.28 PM.jpeg',
+    secondaryImages: [
+      '/uploads/gallery/FCIT-photo/Tech-carnival-2k26/WhatsApp Image 2026-04-04 at 2.38.03 PM.jpeg',
+      '/uploads/gallery/FCIT-photo/tech-friction/WhatsApp Image 2026-04-04 at 3.01.43 PM.jpeg'
+    ],
   },
 ];
 

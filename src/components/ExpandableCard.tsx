@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Search, ExternalLink, Calendar, User, Tag, Download } from 'lucide-react';
+import { Search, ExternalLink, Calendar, User, Tag, Download, Users } from 'lucide-react';
 import { Project } from '@/types';
 
 interface ExpandableCardProps {
@@ -33,11 +33,17 @@ export default function ExpandableCard({ project }: ExpandableCardProps) {
           {project.title}
         </motion.h3>
         
-        <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+        <div className="flex flex-col gap-2 text-sm text-gray-500 mb-4">
           <div className="flex items-center gap-1">
             <User className="w-4 h-4" />
             <span>{project.author}</span>
           </div>
+          {project.mentor && (
+            <div className="flex items-center gap-1">
+              <Users className="w-4 h-4" />
+              <span>Mentor: {project.mentor}</span>
+            </div>
+          )}
           <div className="flex items-center gap-1">
             <Calendar className="w-4 h-4" />
             <span>{project.date}</span>

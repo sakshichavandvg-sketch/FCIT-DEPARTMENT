@@ -59,7 +59,7 @@ export default function Contact() {
                 {/* Heading */}
                 <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 leading-tight">
                   We are ready to assist you.{' '}
-                  <span className="bg-gradient-to-r from-yellow-600 to-yellow-500 bg-clip-text text-transparent">
+                  <span className="text-5xl md:text-6xl font-serif font-bold text-gray-900 leading-tight">
                     Get in touch with us today.
                   </span>
                 </h1>
@@ -81,7 +81,8 @@ export default function Contact() {
                 {/* Visit Us */}
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="group relative"
+                  className="group relative cursor-pointer"
+                  onClick={() => window.open('https://maps.app.goo.gl/n7UCKmb6t9sqeGQe7?g_st=awb', '_blank')}
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400/20 to-yellow-200/10 opacity-0 group-hover:opacity-100 transition-all duration-300 blur-xl" />
                   <div className="relative rounded-2xl border-2 border-yellow-500/60 bg-white/80 backdrop-blur-sm p-8 hover:border-yellow-500 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-400/20">
