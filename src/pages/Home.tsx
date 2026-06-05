@@ -1,10 +1,12 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
-import { ArrowRight, BookOpen, Users, Trophy, Target, Eye, Compass, GraduationCap } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
+import { ArrowRight, BookOpen, Users, Trophy, Target, Eye, Compass, GraduationCap, Mail, Phone, Award, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Counter from '@/components/Counter';
 import DownloadBrochureButton from '@/components/DownloadBrochureButton';
 import ImageSlider from '@/components/ImageSlider';
+import { FACULTY } from '@/constants';
+import { Faculty as FacultyType } from '@/types';
 
 const STATS = [
   { label: 'Students', value: 700, suffix: '+', icon: Users },
@@ -116,6 +118,8 @@ const CORE_VALUES = [
 ];
 
 export default function Home() {
+  const [selectedDean, setSelectedDean] = useState<FacultyType | null>(null);
+  
   const deanHeading = 'Welcome to the Department of FCIT';
   const deanAuthor = 'Dean, Faculty of Computing and Information Technology';
   const deanMessage = [
@@ -123,6 +127,8 @@ export default function Home() {
     { text: 'technical depth, innovation, and hands-on learning', highlight: true },
     { text: ' for a fast-changing world. Join us to experience collaborative research, expert faculty, and vibrant student life.', highlight: false },
   ];
+
+  const dean = FACULTY.find(f => f.designation === 'Dean');
 
   const headingVariant = {
     hidden: { opacity: 0 },
@@ -162,7 +168,7 @@ export default function Home() {
             alt="GM University campus building"
             className="h-full w-full object-cover"
           />
-           <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent"></div>
         </div>
 
         <div className="relative z-10 min-h-screen flex items-center">
@@ -256,17 +262,17 @@ export default function Home() {
               </h2>
             </div>
             <p className="text-lg text-gray-600 leading-loose font-light text-justify max-w-4xl mx-auto tracking-wide">
-  To disseminate knowledge and conduct research in computing and information technology with a learner-centric approach. 
-  To teach essential skills such as critical thinking, creativity and innovation, collaboration, communication, technical 
-  and digital proficiency, flexibility and adaptability, cultural values, and leadership and responsibility. 
-  To develop global citizens by educating students across emotional, physical, social, economic, environmental, spiritual, 
-  and intellectual dimensions of human growth in addition to intellectual pursuits. 
-  To address real-world challenges and establish the groundwork for entrepreneurship and lifelong learning. 
-  Join us in our mission to innovate and excel.
-</p>
+              To disseminate knowledge and conduct research in computing and information technology with a learner-centric approach.
+              To teach essential skills such as critical thinking, creativity and innovation, collaboration, communication, technical
+              and digital proficiency, flexibility and adaptability, cultural values, and leadership and responsibility.
+              To develop global citizens by educating students across emotional, physical, social, economic, environmental, spiritual,
+              and intellectual dimensions of human growth in addition to intellectual pursuits.
+              To address real-world challenges and establish the groundwork for entrepreneurship and lifelong learning.
+              Join us in our mission to innovate and excel.
+            </p>
             <div className="grid grid-cols-2 gap-8 pt-6">
               <div className="space-y-2">
-                <p className="text-3xl font-display font-bold text-brand-primary">35%</p>
+                <p className="text-3xl font-display font-bold text-brand-primary">85%</p>
                 <p className="text-sm text-gray-500 font-medium uppercase tracking-wider">Placement Rate</p>
               </div>
               <div className="space-y-2">
@@ -299,12 +305,13 @@ export default function Home() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="overflow-hidden rounded-[50px] shadow-2xl"
+            className="overflow-hidden rounded-[50px] shadow-2xl cursor-pointer group"
+            onClick={() => dean && setSelectedDean(dean)}
           >
             <img
               src="/uploads/gallery/Dean.jpg"
               alt="Dean of FCIT"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </motion.div>
 
@@ -315,33 +322,33 @@ export default function Home() {
             className="bg-white p-12 rounded-[50px] shadow-2xl border border-gray-100 flex flex-col justify-center"
           >
             <span className="text-brand-accent font-sans uppercase tracking-[0.4em] text-xs">
-  A Message from the Dean
-</span>
+              A Message from the Dean
+            </span>
 
-<motion.h2
-  variants={headingVariant}
-  className="text-5xl md:text-6xl font-display font-bold mt-6 tracking-tight text-slate-950 leading-tight"
->
-  {deanHeading}
-</motion.h2>
+            <motion.h2
+              variants={headingVariant}
+              className="text-5xl md:text-6xl font-display font-bold mt-6 tracking-tight text-slate-950 leading-tight"
+            >
+              {deanHeading}
+            </motion.h2>
 
-<p className="mt-4 text-lg font-sans text-slate-700 max-w-2xl">
-  {deanAuthor}
-</p>
+            <p className="mt-4 text-lg font-sans text-slate-700 max-w-2xl">
+              {deanAuthor}
+            </p>
 
-<motion.p
-  variants={paragraphVariant}
-  className="mt-10 text-base sm:text-lg text-slate-700 leading-[1.75] font-sans max-w-3xl"
->
-  {deanMessage.map((segment, index) => (
-    <span
-      key={index}
-      className={segment.highlight ? 'font-semibold' : ''}
-    >
-      {segment.text}
-    </span>
-  ))}
-</motion.p>
+            <motion.p
+              variants={paragraphVariant}
+              className="mt-10 text-base sm:text-lg text-slate-700 leading-[1.75] font-sans max-w-3xl"
+            >
+              {deanMessage.map((segment, index) => (
+                <span
+                  key={index}
+                  className={segment.highlight ? 'font-semibold' : ''}
+                >
+                  {segment.text}
+                </span>
+              ))}
+            </motion.p>
           </motion.div>
         </div>
       </section>
@@ -463,7 +470,7 @@ export default function Home() {
       {/* Vision, Mission, Goals Section */}
       <section className="py-40 bg-brand-surface px-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-accent/5 -skew-x-12 translate-x-1/2" />
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-24 space-y-4">
             <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter">Vision, Mission & Objectives</h2>
@@ -483,16 +490,16 @@ export default function Home() {
                 className="group relative bg-white p-12 rounded-[50px] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
               >
                 <div className={`absolute top-0 right-0 w-32 h-32 ${value.color} opacity-5 rounded-bl-full group-hover:scale-150 transition-transform duration-700`} />
-                
+
                 <div className={`w-20 h-20 ${value.color} rounded-3xl flex items-center justify-center mb-10 group-hover:rotate-12 transition-transform shadow-lg`}>
                   <value.icon className="w-10 h-10 text-white" />
                 </div>
-                
+
                 <h3 className="text-3xl font-display font-bold mb-6">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-lg font-light whitespace-pre-line">
                   {value.description}
                 </p>
-                
+
                 <div className="mt-10 flex items-center gap-2 text-brand-accent font-bold text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </div>
@@ -513,7 +520,7 @@ export default function Home() {
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#3b82f6,transparent_70%)]" />
           </div>
-          
+
           <div className="relative z-10 max-w-3xl mx-auto space-y-10">
             <h2 className="text-5xl md:text-8xl font-display font-bold tracking-tighter leading-[0.9]">
               Shape the Future with Us.
@@ -538,6 +545,104 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      {/* Dean Detail Modal */}
+      <AnimatePresence>
+        {selectedDean && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-brand-primary/95 backdrop-blur-2xl flex items-center justify-center p-6"
+            onClick={() => setSelectedDean(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="relative max-w-6xl w-full bg-white rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row"
+              onClick={e => e.stopPropagation()}
+            >
+              {/* Left Section: Photo */}
+              <div className="md:w-2/5 relative h-[400px] md:h-auto">
+                <img
+                  src={selectedDean.image}
+                  alt={selectedDean.name}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden" />
+                <div className="absolute bottom-6 left-6 text-white md:hidden">
+                  <h2 className="text-3xl font-display font-bold">{selectedDean.name}</h2>
+                  <p className="text-white/80">{selectedDean.designation}</p>
+                </div>
+              </div>
+
+              {/* Right Section: Details */}
+              <div className="md:w-3/5 p-8 md:p-16 overflow-y-auto max-h-[80vh]">
+                <div className="hidden md:block mb-10">
+                  <h2 className="text-5xl font-display font-bold mb-2">{selectedDean.name}</h2>
+                  <p className="text-xl text-brand-accent font-medium">{selectedDean.designation}</p>
+                  <p className="text-gray-500 uppercase tracking-widest text-xs font-bold mt-2">{selectedDean.department}</p>
+                </div>
+
+                <div className="space-y-10">
+                  <div>
+                    <h3 className="text-xl font-display font-bold mb-4 flex items-center gap-2">
+                      <BookOpen className="w-5 h-5 text-brand-accent" />
+                      Biography
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-lg">
+                      {selectedDean.bio}
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-xl font-display font-bold mb-4 flex items-center gap-2">
+                        <Award className="w-5 h-5 text-brand-accent" />
+                        Specialization
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedDean.specialization.map(s => (
+                          <span key={s} className="px-4 py-2 bg-gray-100 text-gray-700 rounded-xl text-sm font-medium">
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-xl font-display font-bold mb-4 flex items-center gap-2">
+                        <GraduationCap className="w-5 h-5 text-brand-accent" />
+                        Contact Info
+                      </h3>
+                      <div className="space-y-3">
+                        <a href={`mailto:${selectedDean.email}`} className="flex items-center gap-3 text-gray-600 hover:text-brand-accent transition-colors">
+                          <Mail className="w-5 h-5" />
+                          <span>{selectedDean.email}</span>
+                        </a>
+                        <a href={`tel:${selectedDean.phone}`} className="flex items-center gap-3 text-gray-600 hover:text-brand-accent transition-colors">
+                          <Phone className="w-5 h-5" />
+                          <span>{selectedDean.phone}</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                onClick={() => setSelectedDean(null)}
+                className="absolute top-8 right-8 p-3 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full transition-all"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

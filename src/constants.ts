@@ -871,17 +871,6 @@ export const FACULTY: Faculty[] = [
     specialization: ['Data Science', 'Project Management']
   },
   {
-    id: 'f4',
-    name: 'Prof. Usha N',
-    designation: 'HOD and Assistant Professor',
-    department: 'Computer Science',
-    email: 'usha.n@fcit.edu',
-    phone: '+1 234 567 892',
-    image: '/uploads/gallery/usha.jpeg',
-    bio: 'Prof. Usha N is an expert in image Processing • Database Management System • Cloud Computing • Artificial Neural Network. She is the HOD of Computer Science department.',
-    specialization: ['Image Processing', 'Database Management System', 'Cloud Computing', 'Artificial Neural Network']
-  },
-  {
     id: 'f5',
     name: 'Ms. Sahana K E',
     designation: 'Assistant Professor',
@@ -921,7 +910,7 @@ export const FACULTY: Faculty[] = [
     department: 'School of Computer Applications',
     email: 'sumanthmbudhya.fcit.sca@gmu.ac.in',
     phone: '+91 XXXXXXX',
-    image: '/uploads/gallery/Sumanth M Budhya.jpeg',
+    image: '/uploads/gallery/Sumanth.jpeg',
     bio: 'Assistant Professor Sumanth M. Budhya specializes in Full Stack Java Development, building robust and scalable applications. He is proficient in React Development, creating dynamic and user-friendly interfaces. His expertise also extends to Data Analytics and Machine Learning, enabling data-driven insights and intelligent solutions.',
     specialization: ['Full Stack Java Development', 'React Development', 'Data Analytics', 'Machine Learning']
   },
@@ -948,17 +937,6 @@ export const FACULTY: Faculty[] = [
     specialization: ['Artificial Intelligence', 'Machine Learning', 'Database Management System', 'Cyber Security', 'Java']
   },
   {
-    id: 'f11',
-    name: 'Mr. Rajashekhar G C',
-    designation: 'Director',
-    department: 'School of Computer Applications',
-    email: 'dir.sca@gmu.ac.in',
-    phone: '+91 XXXXXXX',
-    image: '/uploads/gallery/Rjc.png',
-    bio: 'Mr. Rajashekar G C is the Director of the School of Computer Applications at GM University. He holds an MCA degree and an M.Sc. in Mathematics and is currently pursuing his Ph.D. With more than 16 years of teaching experience and 3 years of research experience, he has cultivated expertise in diverse domains including PHP & MySQL, Database Management Systems, Java, Cloud Computing, and R Programming.',
-    specialization: ['PHP & MySQL', 'Database Management System', 'Java Programming', 'Cloud Computing', 'R Programming']
-  },
-  {
     id: 'f12',
     name: 'Ms. Sugandha M S',
     designation: 'Assistant Professor',
@@ -968,17 +946,6 @@ export const FACULTY: Faculty[] = [
     image: '/uploads/gallery/sugandha.jpeg',
     bio: 'Asst. Professor Sugandha M S specializes in Artificial Intelligence, Cloud Computing, and Python programming. With 9 months of teaching experience, she has extensive expertise with Python and MATLAB for research and teaching. Her specialization includes machine learning and big data analytics for solving real-world challenges.',
     specialization: ['Artificial Intelligence', 'Machine Learning', 'Cloud Computing', 'Big Data Analytics', 'Python']
-  },
-  {
-    id: 'f13',
-    name: 'Dr. Shweta Marigoudar',
-    designation: 'Dean',
-    department: 'Faculty of Computing and Information Technology',
-    email: 'dean.fcit@gmu.ac.in',
-    phone: '+91 XXXXXXX',
-    image: '/uploads/gallery/Dean.jpg',
-    bio: 'Dr. Shweta Marigoudar serves as the Dean, Faculty of Computing and Information Technology at GM University, Davangere. With over 16 years of teaching experience at both undergraduate and postgraduate levels, she has guided multiple research scholars at the doctoral level. Her areas of academic expertise include Image Processing, Machine Learning, Pattern recognition, and Data Science. A seasoned academician, she was honored with the "Best Teacher Award" by the Nirmala Foundation and has several publications in peer-reviewed and Scopus-indexed journals.',
-    specialization: ['Image Processing', 'Pattern Recognition', 'Artificial Intelligence', 'Medical Image Processing', 'Agricultural Image Processing', 'Data Analytics']
   },
   {
     id: 'f14',
@@ -1012,17 +979,6 @@ export const FACULTY: Faculty[] = [
     image: '/uploads/gallery/Kantesh.jpg',
     bio: 'Kantesh Mallikarjun is an Assistant Professor in the computer science domain at GM University, Davangere. He earned his Master of Computer Applications (MCA) from Bapuji Institute of Engineering and Technology. With 1 year 7 months of teaching experience and 1 year 2 months of IT industry experience as a Resident Engineer at Tata Consultancy Services (TCS), his expertise encompasses Java, Linux, and Web Technologies. Kantesh is actively involved in mentoring student projects in emerging fields like IoT and Machine Learning. He has published research on predictive ML models and holds certifications in Google Cybersecurity and Google Prompt Essentials.',
     specialization: ['Cybersecurity', 'IoT', 'Artificial Intelligence', 'Full Stack Development', 'Java', 'Linux']
-  },
-  {
-    id: 'f17',
-    name: 'Ms. Shamina M. Attar',
-    designation: 'Director',
-    department: 'School of Computer Science',
-    email: 'dir.scs@gmu.ac.in',
-    phone: '+91 XXXXXXX',
-    image: '/uploads/gallery/shamina.jpeg',
-    bio: 'Ms. Shamina M. Attar is the Director of the School of Computer Science, FCIT, GM University Davanagere. She holds an MCA and is pursuing a PhD. With over 8 years of teaching experience, 2 years of research involvement, and 2 years of industry experience, she brings a well-rounded academic and professional background. Her areas of expertise include Full Stack Development, Artificial Intelligence, and Machine Learning. She is committed to fostering innovative research and delivering high-quality education to students.',
-    specialization: ['Full Stack Development', 'Artificial Intelligence', 'Machine Learning']
   },
   {
     id: 'f18',
