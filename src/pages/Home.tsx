@@ -305,7 +305,7 @@ export default function Home() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="overflow-hidden rounded-[50px] shadow-2xl cursor-pointer group"
+            className="overflow-hidden rounded-[50px] shadow-2xl cursor-pointer group relative"
             onClick={() => dean && setSelectedDean(dean)}
           >
             <img
@@ -313,6 +313,23 @@ export default function Home() {
               alt="Dean of FCIT"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
+            {/* Visual Cue - Click Gesture */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileHover={{ opacity: 1, y: 0 }}
+                className="flex flex-col items-center gap-2"
+              >
+                <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg">
+                  <p className="text-sm font-semibold text-gray-800 flex items-center gap-2">
+                    <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5m5-5v2a2 2 0 01-2 2h-6a2 2 0 01-2-2v-2m0-5V7a2 2 0 012-2h6a2 2 0 012 2v3" />
+                    </svg>
+                    Click to View Profile
+                  </p>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
 
           <motion.div

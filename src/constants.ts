@@ -11,7 +11,7 @@ export const SCHOOLS: School[] = [
       id: 'sca-dir',
       name: 'Prof.Rajashekar G C',
       designation: 'Director - School of Computer Applications',
-      email: 'chetankumarhs.fcit.sca@gmu.ac.in',
+      email: 'dir.sca@gmu.ac.in',
       phone: '+918296246876',
       image: '/uploads/gallery/Rjc.png',
       bio: 'Prof. Rajashekar G C is the Director of the School of Computer Applications at GM University. He holds an MCA degree and an M.Sc. in Mathematics and is currently pursuing his Ph.D. With more than 16 years of teaching experience and 3 years of research experience, he has cultivated expertise in diverse domains including PHP & MySQL, Database Management Systems, JAVA, Cloud Computing, and R Programming. His academic interests are centered on the application of advanced computational techniques to address real-world challenges. He is deeply committed to promoting innovative research and ensuring the delivery of high-quality education to his students.',
@@ -21,21 +21,21 @@ export const SCHOOLS: School[] = [
       id: 'sca-hod',
       name: 'Prof. Usha N',
       designation: 'HOD - School of Computer Applications',
-      email: 'usha.n@fcit.edu',
+      email: 'ushan.fcit.sca@gmu.ac.in',
       phone: '+1 234 567 892',
       image: '/uploads/gallery/usha.jpeg',
       bio: 'Prof. Usha N is an expert in Image Processing, Database Management System, Cloud Computing, and Artificial Neural Networks.',
       specialization: ['Image Processing', 'Database Management System', 'Cloud Computing', 'Artificial Neural Network']
     },
     courses: [
-      { id: 'bca', name: 'BCA', description: 'A 3-year undergraduate program focusing on computer applications.', duration: '3 Years', level: 'Undergraduate', documentUrl: '/uploads/gallery/Program BCA.pdf', image: '/uploads/gallery/bca.png' },
-      { id: 'bca-ai', name: 'BCA in AI & Data Analytics', description: 'A 3-year undergraduate program blending AI and analytics with core application development.', duration: '3 Years', level: 'Undergraduate', documentUrl: '/uploads/gallery/Program Document -BCA-AI&DA26.pdf', image: '/uploads/gallery/bca-ai.png' },
-      { id: 'bca-cyber', name: 'BCA in Cybersecurity', description: 'A 3-year undergraduate program focused on cybersecurity principles and practices.', duration: '3 Years', level: 'Undergraduate', documentUrl: '/uploads/gallery/Program Document-BCA-Cyber Security.pdf', image: '/uploads/gallery/bcy.png' },
-      { id: 'bca-data', name: 'BCA in Data Science', description: 'A 3-year postgraduate program in data science, machine learning, and big data technologies.', duration: '3 Years', level: 'Undergraduate', documentUrl: '/uploads/gallery/Program Document -BCA-DS26.pdf', image: '/uploads/gallery/mds.png' },
-      { id: 'mca', name: 'MCA', description: 'A 2-year postgraduate program for advanced software skills.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/Program MCA.pdf', image: '/uploads/gallery/mca.png' },
-      { id: 'mca-ai', name: 'MCA in AI & Data Analytics', description: 'A 2-year postgraduate program focusing on AI, analytics, and applied research.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/Program MCA.pdf', image: '/uploads/gallery/mds.png' },
-      { id: 'mca-cyber', name: 'MCA in Cybersecurity', description: 'A 2-year postgraduate program centered on cyber defense and security systems.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/Program MCA.pdf', image: '/uploads/gallery/mcy.png' },
-      { id: 'mca-data', name: 'MCA in Data Science', description: 'A 2-year postgraduate program in data science, machine learning, and big data technologies.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/Program MCA.pdf', image: '/uploads/gallery/mds.png' },
+      { id: 'bca', name: 'BCA', description: 'A 3-year undergraduate program focusing on computer applications.', duration: '3 Years', level: 'Undergraduate', documentUrl: '/uploads/gallery/BCA.pdf', image: '/uploads/gallery/bca.png' },
+      { id: 'bca-ai', name: 'BCA in AI & Data Analytics', description: 'A 3-year undergraduate program blending AI and analytics with core application development.', duration: '3 Years', level: 'Undergraduate', documentUrl: '/uploads/gallery/BCA.pdf', image: '/uploads/gallery/bca-ai.png' },
+      { id: 'bca-cyber', name: 'BCA in Cybersecurity', description: 'A 3-year undergraduate program focused on cybersecurity principles and practices.', duration: '3 Years', level: 'Undergraduate', documentUrl: '/uploads/gallery/BCA.pdf', image: '/uploads/gallery/bcy.png' },
+      { id: 'bca-data', name: 'BCA in Data Science', description: 'A 3-year postgraduate program in data science, machine learning, and big data technologies.', duration: '3 Years', level: 'Undergraduate', documentUrl: '/uploads/gallery/BCA.pdf', image: '/uploads/gallery/mds.png' },
+      { id: 'mca', name: 'MCA', description: 'A 2-year postgraduate program for advanced software skills.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/MCA.pdf', image: '/uploads/gallery/mca.png' },
+      { id: 'mca-ai', name: 'MCA in AI & Data Analytics', description: 'A 2-year postgraduate program focusing on AI, analytics, and applied research.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/MCA.pdf', image: '/uploads/gallery/mds.png' },
+      { id: 'mca-cyber', name: 'MCA in Cybersecurity', description: 'A 2-year postgraduate program centered on cyber defense and security systems.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/MCA.pdf', image: '/uploads/gallery/mcy.png' },
+      { id: 'mca-data', name: 'MCA in Data Science', description: 'A 2-year postgraduate program in data science, machine learning, and big data technologies.', duration: '2 Years', level: 'Postgraduate', documentUrl: '/uploads/gallery/MCA.pdf', image: '/uploads/gallery/mds.png' },
     ]
   },
   {
@@ -58,7 +58,7 @@ export const SCHOOLS: School[] = [
       id: 'scs-hod',
       name: 'Prof. Manjula K',
       designation: 'HOD - School of Computer Science',
-      email: 'manjula.k@fcit.edu',
+      email: 'manjulak.fcit.sca@gmu.ac.in',
       phone: '+1 234 567 892',
       image: '/uploads/gallery/manjula.jpg',
       bio: 'Prof. Manjula K is an expert in Cyber Security and Project Management.',
@@ -76,7 +76,7 @@ export const SCHOOLS: School[] = [
 export const GALLERY: GalleryImage[] = [
   { id: '1', url: '/uploads/gallery/FCIT-photo/Tech-carnival-2k26/WhatsApp Image 2026-04-04 at 2.37.28 PM.jpeg', category: 'Events', date: '2026-04-04', title: 'Tech Carnival' },
   { id: '2', url: '/uploads/gallery/FCIT-photo/Graduation day/WhatsApp Image 2026-04-04 at 5.17.05 PM.jpeg', category: 'Achievements', date: '2026-04-04', title: 'Graduation Day' },
-  { id: '3', url: '/uploads/gallery/FCIT-photo/conference_2k25/WhatsApp Image 2026-04-04 at 3.58.10 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Conference Event' },
+  { id: '3', url: '/uploads/gallery/FCIT-photo/conference_2k25/WhatsApp Image 2026-04-04 at 3.59.51 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Conference Event' },
   { id: '4', url: '/uploads/gallery/FCIT-photo/workshops/WhatsApp Image 2026-04-04 at 4.20.35 PM.jpeg', category: 'Workshops', date: '2026-04-04', title: 'Workshop Session' },
   { id: '5', url: '/uploads/gallery/FCIT-photo/student_corner/WhatsApp Image 2026-04-04 at 5.10.18 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Student Life' },
   { id: '6', url: '/uploads/gallery/FCIT-photo/sports events/WhatsApp Image 2026-04-04 at 3.26.44 PM.jpeg', category: 'Sports', date: '2026-04-04', title: 'Sports Moment' },
@@ -94,7 +94,30 @@ export const GALLERY: GalleryImage[] = [
   { id: '18', url: '/uploads/gallery/FCIT-photo/MCA_outreach program/mca.jpeg', category: 'Events', date: '2026-04-04', title: 'MCA Outreach' },
   { id: '19', url: '/uploads/gallery/FCIT-photo/MCA_outreach program/mca1.jpeg', category: 'Events', date: '2026-04-04', title: 'MCA Outreach Event' },
   { id: '20', url: '/uploads/gallery/FCIT-photo/parents_meeting/WhatsApp Image 2026-04-04 at 4.46.13 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Parents Meeting' },
+  {id: '21', url: '/uploads/gallery/FCIT-photo/conference_2k25/workshop.jpeg', category: 'Campus', date: '2026-04-04', title: 'Conference 2025' },
+  { id: '22', url: '/uploads/gallery/FCIT-photo/Ethnic day/Ethnic2.jpeg', category: 'Campus', date: '2026-04-04', title: 'Ethnic Celebration' },
+  { id: '23', url: '/uploads/gallery/FCIT-photo/Ethnic day/WhatsApp Image 2026-04-04 at 5.06.35 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'Ethnic Celebration' },
+  { id: '24', url: '/uploads/gallery/FCIT-photo/faculty_corner/F1.jpeg', category: 'Campus', date: '2026-04-04', title: 'Faculty Corner' },
+  { id: '25', url: '/uploads/gallery/FCIT-photo/faculty_corner/F2.jpeg', category: 'Campus', date: '2026-04-04', title: 'Faculty Corner' },
+  { id: '26', url: '/uploads/gallery/FCIT-photo/faculty_corner/F3.jpeg', category: 'Campus', date: '2026-04-04', title: 'Faculty Corner' },
+  { id: '27', url: '/uploads/gallery/FCIT-photo/faculty_corner/F4.jpeg', category: 'Campus', date: '2026-04-04', title: 'Faculty Corner' },
+  { id: '28', url: '/uploads/gallery/FCIT-photo/GMS-TRIP/WhatsApp Image 2026-04-04 at 2.55.42 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'GMS Trip' },
+  { id: '29', url: '/uploads/gallery/FCIT-photo/Graduation day/WhatsApp Image 2026-04-04 at 5.17.06 PM (2).jpeg', category: 'Campus', date: '2026-04-04', title: 'GMS Trip' },
+  { id: '30', url: '/uploads/gallery/FCIT-photo/Graduation day/WhatsApp Image 2026-04-04 at 5.17.06 PM.jpeg', category: 'Campus', date: '2026-04-04', title: 'GMS Trip' },
+  { id: '31', url: '/uploads/gallery/FCIT-photo/ideathon/WhatsApp Image 2026-04-04 at 3.22.27 PM (1).jpeg', category: 'Events', date: '2026-04-04', title: 'Idea Challenge' },
+  { id: '32', url: '/uploads/gallery/FCIT-photo/sports events/WhatsApp Image 2026-04-04 at 3.16.35 PM (1).jpeg', category: 'Sports', date: '2026-04-04', title: 'Sports Moment' },
+  { id: '34', url: '/uploads/gallery/FCIT-photo/sports events/WhatsApp Image 2026-04-04 at 3.16.36 PM.jpeg', category: 'Sports', date: '2026-04-04', title: 'Sports Moment' },
+  { id: '35', url: '/uploads/gallery/FCIT-photo/sports events/S1.jpeg', category: 'Sports', date: '2026-04-04', title: 'Sports Moment' },
+  { id: '36', url: '/uploads/gallery/FCIT-photo/sports events/S2.jpeg', category: 'Sports', date: '2026-04-04', title: 'Sports Moment' },
+  { id: '37', url: '/uploads/gallery/FCIT-photo/sports events/S3.jpeg', category: 'Sports', date: '2026-04-04', title: 'Sports Moment' },
+  { id: '38', url: '/uploads/gallery/FCIT-photo/sports events/S4.jpeg', category: 'Sports', date: '2026-04-04', title: 'Sports Moment' },
+  { id: '39', url: '/uploads/gallery/FCIT-photo/Orientation program/O1.jpeg', category: 'Campus', date: '2026-04-04', title: 'Orientation Day' },
+  { id: '40', url: '/uploads/gallery/FCIT-photo/Orientation program/O2.jpeg', category: 'Campus', date: '2026-04-04', title: 'Orientation Day' },
+  { id: '41', url: '/uploads/gallery/FCIT-photo/Orientation program/O3.jpeg', category: 'Campus', date: '2026-04-04', title: 'Orientation Day' },
+  { id: '7', url: '/uploads/gallery/FCIT-photo/Orientation program/O4.jpeg', category: 'Campus', date: '2026-04-04', title: 'Orientation Day' },
+
 ];
+
 
 export const PROJECTS: Project[] = [
   // Dr. Shweta Marigoudar - Dean FCIT
@@ -838,6 +861,17 @@ export const PROJECTS: Project[] = [
 
 export const FACULTY: Faculty[] = [
   {
+    id: 'f0',
+    name: 'Dr. Shweta Marigoudar',
+    designation: 'Dean',
+    department: 'Faculty of Computing and Information Technology',
+    email: 'dean.fcit@gmu.ac.in',
+    phone: '+91 XXXXXXX',
+    image: '/uploads/gallery/Dean.jpg',
+    bio: 'Dr. Shweta Marigoudar serves as the Dean, Faculty of Computing and Information Technology at GM University, Davangere. With over 16 years of teaching experience at both undergraduate and postgraduate levels, she has guided multiple research scholars at the doctoral level. Her areas of academic expertise include Image Processing, Machine Learning, Pattern recognition, and Data Science. A seasoned academician, she was honored with the "Best Teacher Award" by the Nirmala Foundation and has several publications in peer-reviewed and Scopus-indexed journals.',
+    specialization: ['Image Processing', 'Pattern Recognition', 'Artificial Intelligence', 'Medical Image Processing', 'Agricultural Image Processing', 'Data Analytics']
+  },
+  {
     id: 'f1',
     name: 'Prof. Varun K S',
     designation: 'Assistant Professor',
@@ -1001,5 +1035,16 @@ export const FACULTY: Faculty[] = [
     image: '/uploads/gallery/Keerthana.jpg',
     bio: 'Prof. Keerthana has extensive experience in AI, Machine Learning and Image Processing.',
     specialization: ['Artificial Intelligence', 'Machine Learning', 'AndroidApp Development', 'Computer Vision', 'Image Processing', 'Research in AI-based Application']
+  },
+   {
+    id: 'f20',
+    name: 'Prof. KRUPA RANI S',
+    designation: 'Assistant Professor and MCA,B,Ed',
+    department: 'School of Computer Applictions',
+    email: 'kruparanis.fcit.sca@gmu.ac.in',
+    phone: '+91 8970531153',
+    image: '/uploads/gallery/Krupa Rani S.jpeg',
+    bio: 'Asst. Professor KRUPA RANI S specializes in Cloud Computing and Big Data Analytics. She has extensive experience with Python, R, and MATLAB for research and teaching. Her expertise also covers blockchain security, cryptographic protocols, and big data analytics.',
+    specialization: ['Big Data Analytics', 'Blockchain', 'Cloud Computing',  'MATLAB']
   }
 ];
